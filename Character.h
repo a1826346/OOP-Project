@@ -4,16 +4,18 @@
 #include<iostream>
 
 class Character {
+protected:
+    int health;
+    int maxMoves;
+    int moveNum;
+
 public:
-int health;
-int maxMoves;
-int moveNum;
-Character();
-Character(int Health, int MaxMoves, int MoveNum);
-void gainHealth(int);
-void reduceHealth(int);
-virtual void inputMove() = 0;
-bool isDead();
+    Character();
+    Character(int Health, int MaxMoves, int MoveNum);
+    void gainHealth(int);
+    void reduceHealth(int);
+    virtual void inputMove() = 0;
+    bool isDead();
 
 };
 
