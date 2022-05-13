@@ -17,11 +17,13 @@ class Player : public Character{
         ~Player();
 
         //setters
+
         void setSpeed(int _speed);
         void setMagic(int _magic);
         void setClassType(std::string _classType);
 
         //getters
+        
         int getSpeed();
         int getMagicMax();
         int getCurrentMagic();
@@ -33,7 +35,7 @@ class Player : public Character{
         void useMove();
         void displayMoves();
         void learnMove(Move _move);
-}
+};
 
 
 #endif //PLAYER_H

@@ -4,62 +4,66 @@ Player::Player(){
 
 }
 
-void setSpeed(int _speed){
+void Player::setSpeed(int _speed){
     this->speed = _speed;
 }
 
-void setMagic(int _magic){
+void Player::setMagic(int _magic){
     this->magic = _magic;
 }
 
-void setClassType(std::string _classType){
+void Player::setClassType(std::string _classType){
     this->classType = _classType;
 }
 
 
-int getSpeed(){
+int Player::getSpeed(){
     return speed;
 }
 
-int getMagicMax(){
+int Player::getMagicMax(){
     return magicMax;
 }
 
-int getCurrentMagic(){
+int Player::getCurrentMagic(){
     return currentMagic;
 }
 
-std::string getClassType(){
+std::string Player::getClassType(){
     return classType;
 }
 
 
-void gainMagic(int gain){
+void Player::gainMagic(int gain){
     currentMagic += gain;
     if (currentMagic > magicMax){
         currentMagic = magicMax;
     }
 }
 
-void depleteMagic(int deplete){
+void Player::depleteMagic(int deplete){
     currentMagic -= deplete;
     if (currentMagic < 0){
         currentMagic = 0;
     }
 }
 
-void inputMove(){
+void Player::inputMove(){
 
 }
 
-void useMove(){
+void Player::useMove(){
 
 }
 
-void displayMoves(){
+void Player::displayMoves(){
 
 }
 
-void learnMove(Move _move){
+void Player::learnMove(Move _move){
+    
+}
+
+Player::~Player(){
     
 }
