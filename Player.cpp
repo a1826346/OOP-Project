@@ -8,8 +8,12 @@ void Player::setSpeed(int _speed){
     this->speed = _speed;
 }
 
-void Player::setMagic(int _magic){
-    this->magic = _magic;
+void Player::setMagicMax(int _magicMax){
+    this->magicMax = _magicMax;
+}
+
+void Player::setCurrentMagic(int _currentMagic){
+    this->currentMagic = _currentMagic;
 }
 
 void Player::setClassType(std::string _classType){
@@ -65,5 +69,5 @@ void Player::learnMove(Move _move){
 }
 
 Player::~Player(){
-    
+
 }

@@ -19,11 +19,12 @@ class Player : public Character{
         //setters
 
         void setSpeed(int _speed);
-        void setMagic(int _magic);
+        void setMagicMax(int _magicMax);
+        void setCurrentMagic(int _curentMagic);
         void setClassType(std::string _classType);
 
         //getters
-        
+
         int getSpeed();
         int getMagicMax();
         int getCurrentMagic();
