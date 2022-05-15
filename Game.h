@@ -1,23 +1,24 @@
 #ifndef GAME_H__
 #define GAME_H__
 
+#include <iostream>
 #include <string.h>
+#include "Player.h"
+#include "Computer.h"
 
-class Game
-{
+class Game{
     protected:
-
-    bool running;
-    Player user;
-
+        bool running;
+        Player *user;
     public:
+        Game();
+        ~Game();
 
-    bool StartMenu();
-    void run(string direction);
-    bool IsRunning();
-    void End();
-    void StartFight;
-
+        void startMenu();
+        void run();
+        bool isRunning();
+        void end();
+        void startFight(Player &_user, Computer &_enemy);
 };
 
-#endif
+#endif //GAME_H

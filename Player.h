@@ -7,11 +7,9 @@
 
 class Player : public Character{
     protected:
-        Move *moveList;
-        int speed;
+        Move *moveList = new Move[maxMoves];
         int magicMax;
         int currentMagic;
-        std::string classType;
     public:
         Player();
         ~Player();
@@ -25,17 +23,16 @@ class Player : public Character{
 
         //getters
 
-        int getSpeed();
         int getMagicMax();
         int getCurrentMagic();
-        std::string getClassType();
 
         void gainMagic(int gain);
         void depleteMagic(int deplete);
         void inputMove();
-        void useMove();
+        void useMove(Move _move, Character &_enemy);
         void displayMoves();
         void learnMove(Move _move);
+        void generateMoves();
 };
 
 

@@ -2,8 +2,17 @@
 #include <iostream>
 
 Move::Move(){
-
+    setMoveName("Attack");
+    setDescription("...");
+    setActionText("...");
+    setMagicCost(0);
+    setDamage(1);
+    setHitChance(100);
+    setCritChance(50);
+    setHealAmount(0);
+    setSpeed(1);
 }
+
 Move::~Move(){
 
 }
@@ -58,16 +67,17 @@ int Move::getHitChance(){
 int Move::getCritChance(){
     return critChance;
 }
-int Move::setHealAmount(){
+int Move::getHealAmount(){
     return healAmount;
 }
-int Move::setSpeed(){
+int Move::getSpeed(){
     return speed;
 }
 
 int Move::genChance(){
     srand((unsigned)time(0));
     int num = rand()%100+1;
+    return num;
 }
 void Move::printDesc(){
     std::cout << description << std::endl;
