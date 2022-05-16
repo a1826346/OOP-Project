@@ -11,11 +11,6 @@ Computer::Computer(){
     generateMoves();
 }
 
-void Computer::generateMoves(){
-    Move attack;
-    moveList[0] = attack;
-}
-
 void Computer::inputMove(){
     srand((unsigned)time(0));
     int num = rand()%maxMoves+1;

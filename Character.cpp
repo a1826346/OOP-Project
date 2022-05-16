@@ -72,7 +72,8 @@ void Character::inputMove(){
 }
 
 void Character::generateMoves(){
-    
+    Move attack;
+    moveList[0] = attack;
 }
 
 std::string Character::getClassType(){

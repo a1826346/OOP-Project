@@ -7,6 +7,7 @@
 
 class Character {
 protected:
+    Move *moveList = new Move[maxMoves];
     int currentHealth;
     int maxHealth;
     int maxMoves;

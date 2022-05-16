@@ -6,6 +6,7 @@
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; 
 
+/** default player constructor */
 Player::Player(){
     speed = 5;
     magicMax = 50;
@@ -14,34 +15,37 @@ Player::Player(){
     generateMoves();
 }
 
+/**  sets the player's speed */
 void Player::setSpeed(int _speed){
     this->speed = _speed;
 }
 
+/** sets the player's maximum amount of magic to hold */
 void Player::setMagicMax(int _magicMax){
     this->magicMax = _magicMax;
 }
 
+/** sets the player's current amount of magic */
 void Player::setCurrentMagic(int _currentMagic){
     this->currentMagic = _currentMagic;
 }
 
+/** sets the player's class type as a string */
 void Player::setClassType(std::string _classType){
     this->classType = _classType;
 }
 
-
-
-
+/** returns the player's maximum amount of magic */
 int Player::getMagicMax(){
     return magicMax;
 }
 
+/** returns the player's current magic */
 int Player::getCurrentMagic(){
     return currentMagic;
 }
 
-
+/** increases the player's current magic by specified integer amount */
 void Player::gainMagic(int gain){
     currentMagic += gain;
     if (currentMagic > magicMax){
@@ -49,6 +53,7 @@ void Player::gainMagic(int gain){
     }
 }
 
+/** reduces the player's current magic by specified integer amount */
 void Player::depleteMagic(int deplete){
     currentMagic -= deplete;
     if (currentMagic < 0){
@@ -56,6 +61,7 @@ void Player::depleteMagic(int deplete){
     }
 }
 
+/** prompt for user to input their chosen move during a fight instance */
 void Player::inputMove(){
     std::cout << "Enter move number: ";
     std::cin >> moveNum;
@@ -74,6 +80,7 @@ void Player::inputMove(){
     chosenMove = moveList[moveNum-1];
 }
 
+/** function to use move and apply its effects on enemy object */
 void Player::useMove(Move _move, Character &_enemy){
     depleteMagic(_move.getMagicCost());
     if (_move.genChance() < _move.getHitChance()){
@@ -97,6 +104,7 @@ void Player::useMove(Move _move, Character &_enemy){
 
 }
 
+/** displays the player's available moves */
 void Player::displayMoves(){
     for (int i = 0; i < maxMoves; i++){
         std::cout << i+1 << ": " << (moveList[i]).getMoveName() << " | "; 
@@ -104,17 +112,7 @@ void Player::displayMoves(){
     std::cout << std::endl;
 }
 
-void Player::learnMove(Move _move){
-    maxMoves++;
-    moveList[maxMoves] = _move;
-    std::cout << _move.getMoveName() << " learned." << std::endl;
-}
-
-void Player::generateMoves(){
-    Move attack;
-    moveList[0] = attack;
-}
-
+/** default destructor */
 Player::~Player(){
     delete[] moveList;
 }
