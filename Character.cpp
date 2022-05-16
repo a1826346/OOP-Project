@@ -67,19 +67,23 @@ bool Character::isDead(){
     }
 }
 
+/** sets character's move as default to first move */
 void Character::inputMove(){
-
+    moveNum = 1;
 }
 
+/** generates the default move for a character object */
 void Character::generateMoves(){
     Move attack;
     moveList[0] = attack;
 }
 
+/** returns the character's class type */
 std::string Character::getClassType(){
     return classType;
 }
 
+/** default character destructor */
 Character::~Character(){
     
 }

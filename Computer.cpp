@@ -6,17 +6,20 @@
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; 
 
+/** default computer constructor */
 Computer::Computer(){
     maxMoves = 0;
     generateMoves();
 }
 
+/** computer's randomized move input */
 void Computer::inputMove(){
     srand((unsigned)time(0));
     int num = rand()%maxMoves+1;
     chosenMove = moveList[num-1];
 }
 
+/** function for computer to use move and apply its effects on player object */
 void Computer::useMove(Move _move, Character &_player){
     int blockedChance = 0;
     if (_player.getClassType() == "Shieldsman"){
@@ -54,10 +57,12 @@ void Computer::useMove(Move _move, Character &_player){
     }
 }
 
+/** returns computer object's name */
 std::string Computer::getName(){
     return name;
 }
 
+/** default computer destructor */
 Computer::~Computer(){
 
 }
