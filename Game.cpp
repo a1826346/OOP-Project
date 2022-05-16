@@ -40,17 +40,19 @@ using namespace std;
                 break;
                 default:
                 //smh
-                
+
             }
         }
 
     }
 
     void Game::Run(){
-
+        StartMenu();
+        running = 1;
     }
     void Game::End(){
-
+        running = 0;
+        //stop all code
     }
     bool Game::IsRunning(){
         if( running == 1){
@@ -62,4 +64,16 @@ using namespace std;
     }
     void Game::StartFight(Player user, Computer enemy){
         // text to start fight
+    }
+    
+    Game::Game(){
+        running = 0;
+        user = //default player
+    }
+    Game::Game(Player character){
+        running = 0;
+        user = character;
+    }
+    
+    }
     }

@@ -13,11 +13,15 @@ class Game
     public:
 
     bool StartMenu();
-    void run(string direction);
+    void run();
     bool IsRunning();
     void End();
     void StartFight;
 
+    Game(
+
+    Game(Player character);
+    }
 };
 
 #endif
