@@ -41,8 +41,8 @@ class Move{
         std::string getActionText();
         int getHitChance();
         int getCritChance();
-        int setHealAmount();
-        int setSpeed();
+        int getHealAmount();
+        int getSpeed();
 
         int genChance();
         void printDesc();
