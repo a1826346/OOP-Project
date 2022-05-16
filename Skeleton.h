@@ -3,7 +3,7 @@
 
 #include "Computer.h"
 
-class Skeleton : public Computer{
+class Skeleton : public Computer {
     private:
     public:
         Skeleton();
