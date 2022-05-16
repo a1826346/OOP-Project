@@ -17,7 +17,7 @@ void Skeleton::generateMoves(){
     deathRune.setHealAmount(0);
     deathRune.setSpeed(1);
     moveList[0] = deathRune;
-    
+
     move daggerRain;
     daggerRain.setMoveName("Dagger Rain");
     daggerRain.setActionText("...");
@@ -28,7 +28,7 @@ void Skeleton::generateMoves(){
     daggerRain.setHealAmount(0);
     daggerRain.setSpeed(3);
     moveList[1] = daggerRain;
-    
+
     move maceSwing;
     maceSwing.setMoveName("Mace Swing");
     maceSwing.setActonText("...");
@@ -38,7 +38,7 @@ void Skeleton::generateMoves(){
     maceSwing.setHealAmount(0);
     maceSwing.setSpeed(5);
     moveList[2] = maceSwing;
-    
+
     move regenerate;
     regenerate.setMoveName("Regenerate Health");
     regenerate.setActionText("...");
@@ -50,6 +50,6 @@ void Skeleton::generateMoves(){
     moveList[3] = regenerate;
 }
 
-Lord::~Lord({
-    
+Lord::~Lord(){
+
 }

@@ -10,7 +10,7 @@ class Game{
     protected:
         bool running;
         Player *user;
-    
+
     public:
         Game();
         ~Game();
@@ -20,11 +20,7 @@ class Game{
         bool isRunning();
         void end();
         void startFight(Player &_user, Computer &_enemy);
-       
-    Game(
-
-    Game(Player character);
-    }
+        void midGame();
 };
 
 #endif //GAME_H

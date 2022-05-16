@@ -1,4 +1,4 @@
-#ifndef LORD_H__
+#ifndef LORD_H
 #define LORD_H
 
 #include "Computer.h"
