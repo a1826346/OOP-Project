@@ -1,5 +1,6 @@
 #include "Warrior.h"
 
+// Basic Constructor with medium to high health, medium magic and low speed.
 Warrior::Warrior(){
     maxHealth = 80;
     currentHealth = maxHealth;
@@ -12,7 +13,8 @@ Warrior::Warrior(){
 }
 
 void Warrior::generateMoves{
-    
+
+    // Stab is a low damage, completely accurate, medium crit basic attack.
     Move stab;
     stab.setMoveName("Stab");
     stab.setDescription("...");
@@ -24,7 +26,8 @@ void Warrior::generateMoves{
     stab.setHealAmount(0);
     stab.setSpeed(2);
     moveList[0] = stab;
-    
+
+    // Spinning Swipe is a low to medium damage, mostly accurate, medium crit basic attack.
     Move swipe;
     swipe.setMoveName("Swinning Swipe");
     swipe.setDescription("...");
@@ -36,7 +39,8 @@ void Warrior::generateMoves{
     swipe.setHealAmount(0);
     swipe.setSpeed(6);
     moveList[1] = swipe;
-    
+
+    // Segmentation is a medium to high damage, completely accurate magic attack.
     Move segmentation;
     segmentation.setMoveName("Segmentation");
     segmentation.setDescription("...");
@@ -48,12 +52,13 @@ void Warrior::generateMoves{
     segmentation.setHealAmount(0);
     segmentation.setSpeed(1);
     moveList[2] = segmentation;
-    
+
+    // Uppercat Swipe is a medium damage, mostly accurate, extremely high crit, magic attack.
     Move uppercut;
-    uppercut.setMoveName("uppercut Swipe");
+    uppercut.setMoveName("Uppercut Swipe");
     uppercut.setDescription("...");
     uppercut.setActionText("...");
-    uppercut.setMagicCost(20);
+    uppercut.setMagicCost(10);
     uppercut.setDamage(50);
     uppercut.setHitChance(80);
     uppercut.setCritChance(75);
@@ -62,6 +67,7 @@ void Warrior::generateMoves{
     moveList[3] = uppercut;
 }
 
+// Basic deconstructor.
 Warrior::~Warrior(){
-    
+
 }

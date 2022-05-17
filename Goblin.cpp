@@ -1,6 +1,7 @@
 #include "Goblin.h"
 
 Goblin::Goblin(){
+    // Basic constructor with low health, high magic, and high speed.
     maxHealth = 60;
     currentHealth = maxHealth;
     speed = 8;
@@ -12,30 +13,34 @@ Goblin::Goblin(){
 }
 
 void Goblin::generateMoves(){
+    
+    // Speed Sweep is a low damage, highly accurate, low crit basic attack.
     Move speedSweep;
     speedSweep.setMoveName("Speed Sweep");
     speedSweep.setDescription("...");
     speedSweep.setActionText("...");
     speedSweep.setMagicCost(0);
-    speedSweep.setDamage(5);
-    speedSweep.setHitChance(90);
+    speedSweep.setDamage(10);
+    speedSweep.setHitChance(95);
     speedSweep.setCritChance(15);
     speedSweep.setHealAmount(0);
     speedSweep.setSpeed(10);
     moveList[0] = speedSweep;
 
+    // Punch is a low damage, high crit, completely accurate basic attack.
     Move punch;
     punch.setMoveName("Punch");
     punch.setDescription("...");
     punch.setActionText("...");
     punch.setMagicCost(0);
-    punch.setDamage(1);
+    punch.setDamage(5);
     punch.setHitChance(100);
     punch.setCritChance(50);
     punch.setHealAmount(0);
     punch.setSpeed(5);
     moveList[1] = punch;
 
+    // Duplicate is a medium damage, mostly accurate, medium crit, magic attack.
     Move duplicate;
     duplicate.setMoveName("Duplicate");
     duplicate.setDescription("...");
@@ -48,6 +53,7 @@ void Goblin::generateMoves(){
     duplicate.setSpeed(2);
     moveList[2] = duplicate;
 
+    // 1000 daggers is a high damage, low crit chance, low accuracy, magic attack.
     Move multiDagger;
     multiDagger.setMoveName("1000 Daggers");
     multiDagger.setDescription("...");
@@ -61,6 +67,7 @@ void Goblin::generateMoves(){
     moveList[3] = multiDagger;
 }
 
+// Basic Deconstructor.
 Goblin::~Goblin(){
 
 }

@@ -1,5 +1,6 @@
 #include "Thief.h"
 
+// Basic constructor with low to average health, very high speed, and low magic.
 Thief::Thief(){
     maxHealth = 50;
     currentHealth = maxHealth;
@@ -12,7 +13,7 @@ Thief::Thief(){
 }
 
 Thief::generateMoves(){
-
+    // Sneak Attack is a medium damage, high crit, mostly accurate basic move.
     Move sneakAttack;
     sneakAttack.setMoveName("Sneak Attack");
     sneakAttack.setDescription("...");
@@ -25,6 +26,7 @@ Thief::generateMoves(){
     sneakAttack.setSpeed(10);
     moveList[0] = sneakAttack;
 
+    // Foot Sweep is a low damage, super high crit, completely accurate basic move.
     Move footSweep;
     footSweep.setMoveName("Foot Sweep");
     footSweep.setDescription("...");
@@ -37,6 +39,7 @@ Thief::generateMoves(){
     footSweep.setSpeed(9);
     moveList[1] = footSweep;
 
+    // Shadow Rune is a one off super powerful move, completely accurate, with a medium crit chance magic attack.
     Move shadowRune;
     shadowRune.setMoveName("Rune of Shadows");
     shadowRune.setDescription("...");
@@ -49,6 +52,7 @@ Thief::generateMoves(){
     shadowRune.setSpeed(4);
     moveList[2] = shadowRune;
 
+    // Shadow attacks is a medium damage, mostly accurate, high crit basic attack.
     Move shadowAttack;
     shadowAttack.setMoveName("Into the Shadows");
     shadowAttack.setDescription("...");
@@ -62,6 +66,7 @@ Thief::generateMoves(){
     moveList[3] = shadowAttack;
 }
 
+// default deconstructor.
 Thief::~Thief(){
 
 }

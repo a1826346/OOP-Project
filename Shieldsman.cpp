@@ -1,5 +1,6 @@
 #include "Shieldsman.h"
 
+// Basic constructor with very high health, low speed and medium magic.
 Shieldsman::Shieldsman(){
     maxHealth = 120;
     currentHealth = maxHealth;
@@ -13,6 +14,7 @@ Shieldsman::Shieldsman(){
 
 void Shieldsman::generateMoves(){
 
+    // Shield bash is a low damage, medium crit, completely accurate basic attack.
     Move shieldBash;
     shieldBash.setMoveName("Shield Bash");
     shieldBash.setDescription("...");
@@ -24,7 +26,8 @@ void Shieldsman::generateMoves(){
     shieldBash.setHealAmount(0);
     shieldBash.setSpeed(2);
     moveList[0] = shieldBash;
-
+    
+    // Spear throw is a low damage, medium crit, mostly accurate basic attack.
     Move spearThrow;
     spearThrow.setMoveName("Spear Throw");
     spearThrow.setDescription("...");
@@ -36,7 +39,8 @@ void Shieldsman::generateMoves(){
     spearThrow.setHealAmount(0);
     spearThrow.setSpeed(2);
     moveList[1] = spearThrow;
-
+    
+    // Spirit shield is a medium damage, completely accurate, magic attack.
     Move spiritShield;
     spiritShield.setMoveName("Spirit Shield");
     spiritShield.setDescription("...");
@@ -49,6 +53,7 @@ void Shieldsman::generateMoves(){
     spiritShield.setSpeed(6);
     moveList[2] = spiritShield;
 
+    // Shield tornado is a high damage, highly accurate, low crit, high magic attack.
     Move shieldTornado;
     shieldTornado.setMoveName("Shield Tornado");
     shieldTornado.setDescription("...");
@@ -62,6 +67,7 @@ void Shieldsman::generateMoves(){
     moveList[3] = shieldTornado;
 }
 
+// Basic deconstructor.
 Shieldsman::~Shieldsman(){
 
 }

@@ -1,7 +1,8 @@
 #include "Brute.h"
 
+// Basic constructor with very high health, medium magic, and very low speed.
 Brute::Brute(){
-    maxHealth = 100;
+    maxHealth = 150;
     currentHealth = maxHealth;
     speed = 1;
     magicMax = 100;
@@ -12,6 +13,7 @@ Brute::Brute(){
 }
 
 void Brute::generateMoves(){
+
     // Hammer Swing attack, medium damage, medium hit chance, medium crit chance, medium speed
     Move hammerSwing;
     hammerSwing.setMoveName("Hammer Swing");
@@ -50,7 +52,7 @@ void Brute::generateMoves(){
     frenzy.setHealAmount(1);
     frenzy.setSpeed(1);
     moveList[2] = frenzy;
-    
+
     // Heavy Swing attack, high damage, low hit chance, high crit chance, low speed
     Move heavySwing;
     heavySwing.setMoveName("Heavy Swing");
@@ -65,7 +67,7 @@ void Brute::generateMoves(){
     moveList[3] = heavySwing;
 }
 
-
+// Basic Deconstructor
 Brute::~Brute(){
 
 }
