@@ -7,7 +7,7 @@ class Lord : public Computer {
     private:
     public:
         Lord();
-        ~Lord()
+        ~Lord();
         void generateMoves();
 };
 
