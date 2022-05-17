@@ -6,8 +6,8 @@
 class UndeadKnight : public Computer {
     private:
     public:
-        undeadKnight();
-        ~undeadKnight();
+        UndeadKnight();
+        ~UndeadKnight();
         void generateMoves();
 };
 
