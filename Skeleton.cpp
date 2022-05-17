@@ -11,11 +11,11 @@ void Skeleton::generateMoves(){
     stab.setMoveName("Stab");
     stab.setActionText("...");
     stab.setMagicCost(0);
-    stab.setDamage(1);
+    stab.setDamage(5);
     stab.setHitChance(100);
-    stab.setCritChance(50);
+    stab.setCritChance(25);
     stab.setHealAmount(0);
-    stab.setSpeed(1);
+    stab.setSpeed(2);
     moveList[0] = stab;
 
     Move chargedPunch;

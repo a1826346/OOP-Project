@@ -8,6 +8,7 @@
 
 using namespace std;
 
+// Start Menu function is used to present to opening menu, both letting the user pick what character they wish to play and the start of the story
  int Game::startMenu(){
      // Opening text shown to the user, the three new lines at the beginning is to seperate the start of the game from any remaining text in the users terminal.
      cout << endl << endl << endl;
@@ -21,6 +22,7 @@ using namespace std;
      for(int i = 0; i < 6; i++){
          cout << i+1 << ". " << characters[i] << ":" << endl << descriptions[i] << endl << endl;
      }
+     // Asking the user for thei input for which character they wish to play and using a switch statement to use the right class.
      char choice = 0;
      cout << "please input the number corresponding to the class you want to play." << endl;
      cin >> choice;
@@ -60,9 +62,11 @@ using namespace std;
         user player;
         cout << "by default the Warrior class has been chosen" << endl;
 
+        // Outputting the story, and using cin to ask the user to pick their path when the story begins, this will change what enemies they face.ccczxghd
         cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl; << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
         int UorD;
         cin >> UorD;
+        // Changing the story based off the input from the user.
         if(UorD == 1){
             cout << endl << endl << "you travel upstairs to the main halls of the castle, as you travel the halls you are met by a knight in black armour" << endl << "an undead knight! a story of legend brought to life?" << endl << "nevermind that right now, you've got a batle to win!" << endl;
         }
@@ -73,10 +77,13 @@ using namespace std;
     }
 }
 
+// function that will execute all the code required to run the game through completely.
 void Game::run(){
     int decide = 0;
+    // running the start of the game.
     decide = startMenu();
     Lord Drace;
+    // starting the fight based off the decision in the start.
     if(decide == 1){
     undeadKnight undead_1;
     startFight(user, undead_1);
@@ -85,6 +92,7 @@ void Game::run(){
     Skeleton skeleton_1;
     startFight(user, skeleton_1);
     }
+    // running the mid game and starting the second fights of the story.
     midGame();
     if(decide == 1){
     undeadKnight undead_2;
@@ -94,32 +102,38 @@ void Game::run(){
     Skeleton skeleton_2;
     startFight(user, skeleton_2);
     }
+    // running the end of the story both pre and post boss, with the boss fight in between.
     endGame();
     startFight(user, Drace);
     final();
 }
 
+// the story outputted in the terminal to show to user what is happening in the story between the first and second fight.
 void Game::midGame(){
     cout << "as the creature fell to the ground, an eerie sound bellowed from deep in the castle" << endl << "not wanting to get caught by another creature you run away, searching for any traces of Lord Drace as you do" << endl;
     cout << "you see a bright red light in the distance, as you go to investigate the source to the light, you are ambushed!" << endl << "A creature identical to the first drops from the roof, with no time to think you jump into another battle!" << endl;
 
 }
 
+// the story outputted in the terminal after the second fight up until the boss fight showing the user the story.
 void Game::endGame(){
     cout << "Now with time to examine the light source, you discover that the light is coming from a portal" << endl << "not trusting the portal, you go to shut it down when a wave of enemies come rushing into the room" << endl << "acting quick you run into the portal and shut it down from the other side" << endl;
     cout << "once you calm down, you realise the massive throne sitting across the room, at the top a dark figure sits" << endl << endl << "without a word, the dark figure stands up, and springs off the throne towards you" << endl << "you get a quick glimps as the figure passed through the light, its Lord Drace himself!" << endl << "lets hope you have what it takes to take him dowm!" << endl << endl;
 }
 
+// the final part of the story shown to the user after they beat the Lord Drace boss.
 void Game::final(){
     cout << "with the death of Lord Drace, the village people were once again free people" << endl << "The castle was taken down and the materials were used to build a wall around the village to keep the villagers safe" << endl << "you were praised as the hero of the village, all the village people look up to you" << endl << endl << "so what journey comes next? " << endl;
 }
 
+// a function that can be called that will stop the game from running any further.
 void Game::end(){
     running = 0;
     //exit or abort function?
     exit
 }
 
+// a function to check whether the game is currently running, mostly used for other functions to make sure the game is in progress.
 bool Game::isRunning(){
     if(running == 1){
         return true;
@@ -129,20 +143,25 @@ bool Game::isRunning(){
     }
 }
 
+// The function that starts a fight between a player and a computer class.
 void Game::startFight(Player &_user, Computer &_enemy){
     int userCurrentSpeed = _user.getSpeed();
     int enemyCurrentSpeed = _enemy.getSpeed();
 
     int playerIndex = 0;
     int enemyIndex = 0;
+    // checking to make sure both fighters are still alive to continue the fight.
     while (_user.isDead() == false && _enemy.isDead() == false){
+        // displaying moves to the user, letting them chose a move and choosing a move for the enemy.
         _user.displayMoves();
         _user.inputMove();
         _enemy.inputMove();
 
+        // using the moves that the user chose and the computer was randomly allocated.
         _user.useMove(_user.getChosenMove(), _enemy);
         _enemy.useMove(_enemy.getChosenMove(), _user);
 
+        //displaying the health of the users character and the enemy to the user.
         cout << "Player health: " << _user.getCurrentHealth() << endl;
         cout << _enemy.getName() << " health: " << _enemy.getCurrentHealth() << endl;
 
@@ -167,20 +186,24 @@ void Game::startFight(Player &_user, Computer &_enemy){
         // }
 
     }
+    // ending the game if the users character dies.
     if (_user.isDead()){
         end();
     }
+    // showing the user the enemy was defeated if they beat the enemy.
         else{
         cout << "The " << _enemy.getName() << " was defeated." << std::endl;
     }
 }
 
+// default contructor.
 Game::Game(){
     Player _user;
     running = 0;
     user = _user
 }
 
+// default deconstructor.
 Game::~Game(){
 
 }
