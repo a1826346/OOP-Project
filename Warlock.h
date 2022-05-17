@@ -9,7 +9,7 @@ class Warlock : public Player {
     public:
         Warlock();
         ~Warlock();
-        void generateMoves;
+        void generateMoves();
 };
 
 #endif //WARLOCK_H
