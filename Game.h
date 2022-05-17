@@ -22,7 +22,7 @@ class Game{
         void startFight(Player &_user, Computer &_enemy);
         void midGame();
         void endGame();
-        void final()
+        void final();
 };
 
 #endif //GAME_H

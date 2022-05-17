@@ -5,6 +5,11 @@
 #include "Brute.h"
 #include "Skeleton.h"
 #include "Move.h"
+#include "Warlock.h"
+#include "Goblin.h"
+#include "Warrior.h"
+#include "Shieldsman.h"
+#include "Thief.h"
 
 using namespace std;
 
@@ -26,41 +31,34 @@ using namespace std;
      cin >> choice;
      switch(choice){
         case '1':
-        Brute player;
-        user = player;
+        user = new Brute;
         cout << "you have chosen the Brute class" << endl;
         break;
         case '2':
-        Warlock player;
-        user = player;
+        user = new Warlock;
         cout << "you have chosen the Warlock class" << endl;
         break;
         case '3':
-        Goblin player;
-        user = player;
+        user = new Goblin;
         cout << "you have chosen the Goblin class" << endl;
         break;
         case '4':
-        Warrior player;
-        user = player;
+        user = new Warrior;
         cout << "you have chosen the Warrior class" << endl;
         break;
         case '5':
-        Shieldsman player;
-        user player;
+        user = new Shieldsman;
         cout << "you have chosen the Shieldsman class" << endl;
         break;
         case '6':
-        Thief player;
-        user = player;
+        user = new Thief;
         cout << "you have chosen the Thief class" << endl;
         break;
         default:
-        Warrior player;
-        user player;
+        user = new Warrior;
         cout << "by default the Warrior class has been chosen" << endl;
 
-        cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl; << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
+        cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
         int UorD;
         cin >> UorD;
         if(UorD == 1){
@@ -79,23 +77,23 @@ void Game::run(){
     Lord Drace;
     if(decide == 1){
     undeadKnight undead_1;
-    startFight(user, undead_1);
+    startFight(*user, undead_1);
     }
     else{
     Skeleton skeleton_1;
-    startFight(user, skeleton_1);
+    startFight(*user, skeleton_1);
     }
     midGame();
     if(decide == 1){
     undeadKnight undead_2;
-    startFight(user, undead_2);
+    startFight(*user, undead_2);
     }
     else{
     Skeleton skeleton_2;
-    startFight(user, skeleton_2);
+    startFight(*user, skeleton_2);
     }
     endGame();
-    startFight(user, Drace);
+    startFight(*user, Drace);
     final();
 }
 
@@ -117,7 +115,7 @@ void Game::final(){
 void Game::end(){
     running = 0;
     //exit or abort function?
-    exit
+    exit;
 }
 
 bool Game::isRunning(){
@@ -176,12 +174,10 @@ void Game::startFight(Player &_user, Computer &_enemy){
 }
 
 Game::Game(){
-    Player _user;
     running = 0;
-    user = _user
 }
 
 Game::~Game(){
-
+    delete user;
 }
 
