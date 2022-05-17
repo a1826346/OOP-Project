@@ -15,12 +15,14 @@ class Game{
         Game();
         ~Game();
 
-        void startMenu();
+        int startMenu();
         void run();
         bool isRunning();
         void end();
         void startFight(Player &_user, Computer &_enemy);
         void midGame();
+        void endGame();
+        void final()
 };
 
 #endif //GAME_H
