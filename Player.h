@@ -31,7 +31,6 @@ class Player : public Character{
         void inputMove();
         void useMove(Move _move, Character &_enemy);
         void displayMoves();
-        void generateMoves();
 };
 
 
