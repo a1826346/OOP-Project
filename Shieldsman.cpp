@@ -32,7 +32,7 @@ void Shieldsman::generateMoves(){
     spearThrow.setMoveName("Spear Throw");
     spearThrow.setDescription("...");
     spearThrow.setActionText("...");
-    spearThrow.setMagicCost();
+    spearThrow.setMagicCost(0);
     spearThrow.setDamage(10);
     spearThrow.setHitChance(90);
     spearThrow.setCritChance(25);
