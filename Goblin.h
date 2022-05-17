@@ -1,4 +1,4 @@
-ifndef GOBLIN_H
+#ifndef GOBLIN_H
 #define GOBLIN_H
 
 #include "Player.h"
@@ -9,7 +9,7 @@ class Goblin : public Player {
     public:
         Goblin();
         ~Goblin();
-        void generateMoves;
+        void generateMoves();
 };
 
 #endif //GOBLIN_H
