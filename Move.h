@@ -1,7 +1,7 @@
 #ifndef MOVE_H
 #define MOVE_H
 
-#include <string>
+#include<string>
 #include <chrono>
 #include <ctime>
 
@@ -46,7 +46,7 @@ class Move{
 
         int genChance();
         void printDesc();
-        void printAction(); 
+        void printAction();
 };
 
 #endif //MOVE_H

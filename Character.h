@@ -1,6 +1,6 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
-#include<string>
+#include<string.h>
 #include<iostream>
 
 #include "Move.h"

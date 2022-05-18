@@ -25,13 +25,13 @@ class Player : public Character{
         int getMagicMax();
         int getCurrentMagic();
 
-        
+
         void gainMagic(int gain);
         void depleteMagic(int deplete);
         void inputMove();
         void useMove(Move _move, Character &_enemy);
         void displayMoves();
-        void generateMoves();
+        virtual void generateMoves();
 };
 
 

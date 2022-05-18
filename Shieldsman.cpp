@@ -26,20 +26,20 @@ void Shieldsman::generateMoves(){
     shieldBash.setHealAmount(0);
     shieldBash.setSpeed(2);
     moveList[0] = shieldBash;
-    
+
     // Spear throw is a low damage, medium crit, mostly accurate basic attack.
     Move spearThrow;
     spearThrow.setMoveName("Spear Throw");
     spearThrow.setDescription("...");
     spearThrow.setActionText("...");
-    spearThrow.setMagicCost();
+    spearThrow.setMagicCost(0);
     spearThrow.setDamage(10);
     spearThrow.setHitChance(90);
     spearThrow.setCritChance(25);
     spearThrow.setHealAmount(0);
     spearThrow.setSpeed(2);
     moveList[1] = spearThrow;
-    
+
     // Spirit shield is a medium damage, completely accurate, magic attack.
     Move spiritShield;
     spiritShield.setMoveName("Spirit Shield");

@@ -12,7 +12,7 @@ Thief::Thief(){
     generateMoves();
 }
 
-Thief::generateMoves(){
+void Thief::generateMoves(){
     // Sneak Attack is a medium damage, high crit, mostly accurate basic move.
     Move sneakAttack;
     sneakAttack.setMoveName("Sneak Attack");

@@ -12,7 +12,7 @@ Warrior::Warrior(){
     generateMoves();
 }
 
-void Warrior::generateMoves{
+void Warrior::generateMoves(){
 
     // Stab is a low damage, completely accurate, medium crit basic attack.
     Move stab;

@@ -1,8 +1,6 @@
-#ifndef GAME_H__
-#define GAME_H__
+#ifndef GAME_H
+#define GAME_H
 
-#include <iostream>
-#include <string.h>
 #include "Player.h"
 #include "Computer.h"
 

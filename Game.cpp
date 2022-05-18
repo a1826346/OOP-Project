@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string.h>
 
-#include "Game.h"
 #include "Brute.h"
 #include "Skeleton.h"
 #include "Move.h"
@@ -10,6 +9,9 @@
 #include "Warrior.h"
 #include "Shieldsman.h"
 #include "Thief.h"
+#include "Game.h"
+#include "Lord.h"
+#include "UndeadKnight.h"
 
 using namespace std;
 
@@ -60,12 +62,8 @@ using namespace std;
         user = new Warrior;
         cout << "by default the Warrior class has been chosen" << endl;
 
-<<<<<<< HEAD
-        // Outputting the story, and using cin to ask the user to pick their path when the story begins, this will change what enemies they face.ccczxghd
-        cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl; << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
-=======
+        // Outputting the story, and using cin to ask the user to pick their path when the story begins, this will change what enemies they face.
         cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
->>>>>>> f285ebc8eef593ee9cdf3bc7e90613139cdbb784
         int UorD;
         cin >> UorD;
         // Changing the story based off the input from the user.
@@ -87,7 +85,7 @@ void Game::run(){
     Lord Drace;
     // starting the fight based off the decision in the start.
     if(decide == 1){
-    undeadKnight undead_1;
+    UndeadKnight undead_1;
     startFight(*user, undead_1);
     }
     else{
@@ -97,7 +95,7 @@ void Game::run(){
     // running the mid game and starting the second fights of the story.
     midGame();
     if(decide == 1){
-    undeadKnight undead_2;
+    UndeadKnight undead_2;
     startFight(*user, undead_2);
     }
     else{
