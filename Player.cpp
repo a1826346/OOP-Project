@@ -4,7 +4,7 @@
 #include <thread>
 
 using namespace std::this_thread; // sleep_for, sleep_until
-using namespace std::chrono; 
+using namespace std::chrono;
 
 /** default player constructor */
 Player::Player(){
@@ -12,7 +12,6 @@ Player::Player(){
     magicMax = 50;
     maxMoves = 1;
     classType = "Player Class";
-    generateMoves();
 }
 
 /**  sets the player's speed */
@@ -107,7 +106,7 @@ void Player::useMove(Move _move, Character &_enemy){
 /** displays the player's available moves */
 void Player::displayMoves(){
     for (int i = 0; i < maxMoves; i++){
-        std::cout << i+1 << ": " << (moveList[i]).getMoveName() << " | "; 
+        std::cout << i+1 << ": " << (moveList[i]).getMoveName() << " | ";
     }
     std::cout << std::endl;
 }
