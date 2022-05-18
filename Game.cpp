@@ -9,10 +9,7 @@
 #include "Warrior.h"
 #include "Shieldsman.h"
 #include "Thief.h"
-<<<<<<< HEAD
 #include "Game.h"
-=======
->>>>>>> d4e49381383d0687e857d828ead4c8be45855639
 #include "Lord.h"
 #include "UndeadKnight.h"
 
@@ -67,7 +64,6 @@ int Game::startMenu(){
 
 
         // Outputting the story, and using cin to ask the user to pick their path when the story begins, this will change what enemies they face.
-
         cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
         int UorD;
         cin >> UorD;
@@ -80,6 +76,7 @@ int Game::startMenu(){
         }
 
     return UorD;
+    }
 }
 
 // function that will execute all the code required to run the game through completely.
