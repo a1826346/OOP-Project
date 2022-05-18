@@ -20,7 +20,7 @@ void Shieldsman::generateMoves(){
     shieldBash.setDescription("...");
     shieldBash.setActionText("...");
     shieldBash.setMagicCost(0);
-    shieldBash.setDamage(5);
+    shieldBash.setDamage(10);
     shieldBash.setHitChance(100);
     shieldBash.setCritChance(25);
     shieldBash.setHealAmount(0);
@@ -33,9 +33,9 @@ void Shieldsman::generateMoves(){
     spearThrow.setDescription("...");
     spearThrow.setActionText("...");
     spearThrow.setMagicCost(0);
-    spearThrow.setDamage(10);
+    spearThrow.setDamage(15);
     spearThrow.setHitChance(90);
-    spearThrow.setCritChance(25);
+    spearThrow.setCritChance(0);
     spearThrow.setHealAmount(0);
     spearThrow.setSpeed(2);
     moveList[1] = spearThrow;
@@ -53,17 +53,17 @@ void Shieldsman::generateMoves(){
     spiritShield.setSpeed(6);
     moveList[2] = spiritShield;
 
-    // Shield tornado is a high damage, highly accurate, low crit, high magic attack.
+    // Shield tornado is a high damage, not accurate, high crit basic attack.
     Move shieldTornado;
     shieldTornado.setMoveName("Shield Tornado");
     shieldTornado.setDescription("...");
     shieldTornado.setActionText("...");
-    shieldTornado.setMagicCost(50);
-    shieldTornado.setDamage(100);
-    shieldTornado.setHitChance(95);
-    shieldTornado.setCritChance(15);
+    shieldTornado.setMagicCost(0);
+    shieldTornado.setDamage(30);
+    shieldTornado.setHitChance(70);
+    shieldTornado.setCritChance(35);
     shieldTornado.setHealAmount(0);
-    shieldTornado.setSpeed(10);
+    shieldTornado.setSpeed(5);
     moveList[3] = shieldTornado;
 }
 

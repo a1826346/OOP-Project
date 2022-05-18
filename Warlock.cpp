@@ -2,7 +2,7 @@
 
 // Basic Constructor with very low health, medium speed and super high magic.
 Warlock::Warlock(){
-    maxHealth = 50;
+    maxHealth = 80;
     currentHealth = maxHealth;
     speed = 6;
     magicMax = 1000;
@@ -19,7 +19,7 @@ void Warlock::generateMoves(){
     energyBeam.setMoveName("Energy Beam");
     energyBeam.setDescription("...");
     energyBeam.setActionText("...");
-    energyBeam.setMagicCost(20);
+    energyBeam.setMagicCost(10);
     energyBeam.setDamage(10);
     energyBeam.setHitChance(100);
     energyBeam.setCritChance(25);
@@ -32,10 +32,10 @@ void Warlock::generateMoves(){
     fireball.setMoveName("fireball");
     fireball.setDescription("...");
     fireball.setActionText("...");
-    fireball.setMagicCost(30);
-    fireball.setDamage(30);
+    fireball.setMagicCost(20);
+    fireball.setDamage(20);
     fireball.setHitChance(90);
-    fireball.setCritChance(25);
+    fireball.setCritChance(15);
     fireball.setHealAmount(0);
     fireball.setSpeed(4);
     moveList[1] = fireball;
@@ -45,10 +45,10 @@ void Warlock::generateMoves(){
     acidRain.setMoveName("Acid Rain");
     acidRain.setDescription("...");
     acidRain.setActionText("...");
-    acidRain.setMagicCost(70);
-    acidRain.setDamage(50);
-    acidRain.setHitChance(80);
-    acidRain.setCritChance(40);
+    acidRain.setMagicCost(50);
+    acidRain.setDamage(40);
+    acidRain.setHitChance(75);
+    acidRain.setCritChance(10);
     acidRain.setHealAmount(0);
     acidRain.setSpeed(6);
     moveList[2] = acidRain;
@@ -58,9 +58,9 @@ void Warlock::generateMoves(){
     Disintigrate.setMoveName("Disintigrate");
     Disintigrate.setDescription("...");
     Disintigrate.setActionText("...");
-    Disintigrate.setMagicCost(100);
-    Disintigrate.setDamage(80);
-    Disintigrate.setHitChance(60);
+    Disintigrate.setMagicCost(80);
+    Disintigrate.setDamage(50);
+    Disintigrate.setHitChance(90);
     Disintigrate.setCritChance(0);
     Disintigrate.setHealAmount(0);
     Disintigrate.setSpeed(8);

@@ -3,7 +3,7 @@
 Lord::Lord(){
     name = "Drace";
     maxMoves = 4;
-
+    maxHealth = 450;
 }
 
 void Lord::generateMoves(){
@@ -11,9 +11,9 @@ void Lord::generateMoves(){
     deathRune.setMoveName("Rune of Death");
     deathRune.setActionText("...");
     deathRune.setMagicCost(0);
-    deathRune.setDamage(50);
+    deathRune.setDamage(30);
     deathRune.setHitChance(40);
-    deathRune.setCritChance(10);
+    deathRune.setCritChance(0);
     deathRune.setHealAmount(0);
     deathRune.setSpeed(1);
     moveList[0] = deathRune;
@@ -22,7 +22,7 @@ void Lord::generateMoves(){
     daggerRain.setMoveName("Dagger Rain");
     daggerRain.setActionText("...");
     daggerRain.setMagicCost(0);
-    daggerRain.setDamage(25);
+    daggerRain.setDamage(15);
     daggerRain.setHitChance(80);
     daggerRain.setCritChance(20);
     daggerRain.setHealAmount(0);
@@ -35,6 +35,7 @@ void Lord::generateMoves(){
     maceSwing.setMagicCost(0);
     maceSwing.setDamage(10);
     maceSwing.setHitChance(100);
+    maceSwing.setCritChance(0);
     maceSwing.setHealAmount(0);
     maceSwing.setSpeed(5);
     moveList[2] = maceSwing;
@@ -45,6 +46,7 @@ void Lord::generateMoves(){
     regenerate.setMagicCost(0);
     regenerate.setDamage(0);
     regenerate.setHitChance(75);
+    regenerate.setCritChance(0);
     regenerate.setHealAmount(40);
     regenerate.setSpeed(1);
     moveList[3] = regenerate;

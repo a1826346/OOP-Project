@@ -5,7 +5,7 @@
 
 class Warrior : public Player {
     private:
-        std::string name = "?";
+        //std::string name = "?";
     public:
         Warrior();
         ~Warrior();

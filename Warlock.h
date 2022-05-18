@@ -5,7 +5,7 @@
 
 class Warlock : public Player {
     private:
-        std::string name = "?";
+        //std::string name = "?";
     public:
         Warlock();
         ~Warlock();

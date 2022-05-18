@@ -2,7 +2,7 @@
 
 // Basic constructor with low to average health, very high speed, and low magic.
 Thief::Thief(){
-    maxHealth = 50;
+    maxHealth = 90;
     currentHealth = maxHealth;
     speed = 10;
     magicMax = 20;
@@ -20,7 +20,7 @@ void Thief::generateMoves(){
     sneakAttack.setActionText("...");
     sneakAttack.setMagicCost(0);
     sneakAttack.setDamage(20);
-    sneakAttack.setHitChance(90);
+    sneakAttack.setHitChance(80);
     sneakAttack.setCritChance(40);
     sneakAttack.setHealAmount(0);
     sneakAttack.setSpeed(10);
@@ -34,7 +34,7 @@ void Thief::generateMoves(){
     footSweep.setMagicCost(0);
     footSweep.setDamage(10);
     footSweep.setHitChance(100);
-    footSweep.setCritChance(60);
+    footSweep.setCritChance(35);
     footSweep.setHealAmount(0);
     footSweep.setSpeed(9);
     moveList[1] = footSweep;
@@ -45,22 +45,22 @@ void Thief::generateMoves(){
     shadowRune.setDescription("...");
     shadowRune.setActionText("...");
     shadowRune.setMagicCost(20);
-    shadowRune.setDamage(150);
+    shadowRune.setDamage(120);
     shadowRune.setHitChance(100);
-    shadowRune.setCritChance(25);
+    shadowRune.setCritChance(0);
     shadowRune.setHealAmount(0);
     shadowRune.setSpeed(4);
     moveList[2] = shadowRune;
 
-    // Shadow attacks is a medium damage, mostly accurate, high crit basic attack.
+    // Shadow attacks is a medium damage, not accurate, high crit basic attack.
     Move shadowAttack;
     shadowAttack.setMoveName("Into the Shadows");
     shadowAttack.setDescription("...");
     shadowAttack.setActionText("...");
     shadowAttack.setMagicCost(0);
     shadowAttack.setDamage(30);
-    shadowAttack.setHitChance(90);
-    shadowAttack.setCritChance(50);
+    shadowAttack.setHitChance(60);
+    shadowAttack.setCritChance(60);
     shadowAttack.setHealAmount(0);
     shadowAttack.setSpeed(7);
     moveList[3] = shadowAttack;

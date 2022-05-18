@@ -2,7 +2,7 @@
 
 Goblin::Goblin(){
     // Basic constructor with low health, high magic, and high speed.
-    maxHealth = 60;
+    maxHealth = 90;
     currentHealth = maxHealth;
     speed = 8;
     magicMax = 200;
@@ -13,16 +13,16 @@ Goblin::Goblin(){
 }
 
 void Goblin::generateMoves(){
-    
+
     // Speed Sweep is a low damage, highly accurate, low crit basic attack.
     Move speedSweep;
     speedSweep.setMoveName("Speed Sweep");
     speedSweep.setDescription("...");
     speedSweep.setActionText("...");
     speedSweep.setMagicCost(0);
-    speedSweep.setDamage(10);
-    speedSweep.setHitChance(95);
-    speedSweep.setCritChance(15);
+    speedSweep.setDamage(15);
+    speedSweep.setHitChance(90);
+    speedSweep.setCritChance(25);
     speedSweep.setHealAmount(0);
     speedSweep.setSpeed(10);
     moveList[0] = speedSweep;
@@ -33,7 +33,7 @@ void Goblin::generateMoves(){
     punch.setDescription("...");
     punch.setActionText("...");
     punch.setMagicCost(0);
-    punch.setDamage(5);
+    punch.setDamage(10);
     punch.setHitChance(100);
     punch.setCritChance(50);
     punch.setHealAmount(0);
@@ -47,7 +47,7 @@ void Goblin::generateMoves(){
     duplicate.setActionText("...");
     duplicate.setMagicCost(40);
     duplicate.setDamage(20);
-    duplicate.setHitChance(80);
+    duplicate.setHitChance(90);
     duplicate.setCritChance(25);
     duplicate.setHealAmount(0);
     duplicate.setSpeed(2);
@@ -58,10 +58,10 @@ void Goblin::generateMoves(){
     multiDagger.setMoveName("1000 Daggers");
     multiDagger.setDescription("...");
     multiDagger.setActionText("...");
-    multiDagger.setMagicCost(50);
-    multiDagger.setDamage(40);
+    multiDagger.setMagicCost(20);
+    multiDagger.setDamage(30);
     multiDagger.setHitChance(70);
-    multiDagger.setCritChance(5);
+    multiDagger.setCritChance(30);
     multiDagger.setHealAmount(0);
     multiDagger.setSpeed(5);
     moveList[3] = multiDagger;

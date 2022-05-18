@@ -61,22 +61,21 @@ int Game::startMenu(){
         default:
             user = new Warrior();
             cout << "by default the Warrior class has been chosen" << endl;
-
-
-        // Outputting the story, and using cin to ask the user to pick their path when the story begins, this will change what enemies they face.
-        cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
-        int UorD;
-        cin >> UorD;
-        // Changing the story based off the input from the user.
-        if(UorD == 1){
-            cout << endl << endl << "you travel upstairs to the main halls of the castle, as you travel the halls you are met by a knight in black armour" << endl << "an undead knight! a story of legend brought to life?" << endl << "nevermind that right now, you've got a batle to win!" << endl;
-        }
-        else{
-            cout << endl << endl << "you travel furhter into the depths of the castles dungeons, as you travel furter and further lower, you reach a large open cavern" << endl << "in the darkness you spot a dark figure walking towards you" << endl << "as it walks into the light you spot its hollow body, its a skeleton!" << endl << "how is this even possble? your thoughts are quickly interupted" << endl << "this is no time to ponder, its time to fight!" << endl;
-        }
-
-    return UorD;
     }
+
+
+    // Outputting the story, and using cin to ask the user to pick their path when the story begins, this will change what enemies they face.
+    cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
+    int UorD;
+    cin >> UorD;
+    // Changing the story based off the input from the user.
+    if(UorD == 1){
+        cout << endl << endl << "you travel upstairs to the main halls of the castle, as you travel the halls you are met by a knight in black armour" << endl << "an undead knight! a story of legend brought to life?" << endl << "nevermind that right now, you've got a batle to win!" << endl;
+    }
+    else{
+        cout << endl << endl << "you travel furhter into the depths of the castles dungeons, as you travel furter and further lower, you reach a large open cavern" << endl << "in the darkness you spot a dark figure walking towards you" << endl << "as it walks into the light you spot its hollow body, its a skeleton!" << endl << "how is this even possble? your thoughts are quickly interupted" << endl << "this is no time to ponder, its time to fight!" << endl;
+    }
+    return UorD;
 }
 
 // function that will execute all the code required to run the game through completely.
@@ -206,6 +205,6 @@ Game::Game(){
 
 // default deconstructor.
 Game::~Game(){
-    delete user;
+    //delete user;
 }
 

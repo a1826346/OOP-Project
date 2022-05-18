@@ -5,7 +5,7 @@
 
 class Shieldsman : public Player {
     private:
-        std::string name = "?";
+        //std::string name = "?";
     public:
         Shieldsman();
         ~Shieldsman();

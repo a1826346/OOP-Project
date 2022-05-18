@@ -3,11 +3,12 @@
 
 #include "Player.h"
 #include "Computer.h"
+#include "Brute.h"
 
 class Game{
     protected:
         bool running;
-        Player *user;
+        Player* user;
 
     public:
         Game();

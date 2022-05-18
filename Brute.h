@@ -4,8 +4,8 @@
 #include "Player.h"
 
 class Brute : public Player{
-    private: 
-        std::string name = "?";
+    private:
+        // std::string name = "?";
     public:
         Brute();
         ~Brute();
