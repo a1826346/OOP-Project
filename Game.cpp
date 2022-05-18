@@ -9,60 +9,65 @@
 #include "Warrior.h"
 #include "Shieldsman.h"
 #include "Thief.h"
+<<<<<<< HEAD
 #include "Game.h"
+=======
+>>>>>>> d4e49381383d0687e857d828ead4c8be45855639
 #include "Lord.h"
 #include "UndeadKnight.h"
 
 using namespace std;
 
 // Start Menu function is used to present to opening menu, both letting the user pick what character they wish to play and the start of the story
- int Game::startMenu(){
-     // Opening text shown to the user, the three new lines at the beginning is to seperate the start of the game from any remaining text in the users terminal.
-     cout << endl << endl << endl;
-     cout << "The village of Boldan has fallen into dark times, with the tyranical Lord Drace oppressing the fair village people." << endl <<  "You are the villages last hope, a hero from a nearby village have been sent to wipeout Drace" << endl << "from his castle high on the hills." << endl << "Can you save the village people before its too late?" << endl;
-     cout << endl;
-     cout << "but first, who are you?" << endl << endl;
+int Game::startMenu(){
+    // Opening text shown to the user, the three new lines at the beginning is to seperate the start of the game from any remaining text in the users terminal.
+    cout << endl << endl << endl;
+    cout << "The village of Boldan has fallen into dark times, with the tyranical Lord Drace oppressing the fair village people." << endl <<  "You are the villages last hope, a hero from a nearby village have been sent to wipeout Drace" << endl << "from his castle high on the hills." << endl << "Can you save the village people before its too late?" << endl;
+    cout << endl;
+    cout << "but first, who are you?" << endl << endl;
 
-     // a string array filled with the characters the user can select is created. Allowing a loop to be made to list the possible characters to the user. preventing too much repitition in the code.
-     string characters[6] = {"Brute","Warlock","Goblin","Warrior","Shieldsman","Thief"};
-     string descriptions[6] = {"The Brute has never lost a fight in his life, in hand to hand combat his raw strength is unmatched. Unluckily with his immense power comes a lack of speed.", "The Warlock has been training to wield magic since birth, he is a fragile fighter but can dish out a lot of damage quick.", "The Goblin is extremely quick, and can catch fighters off guard with rapid counter attacks, but is quite frail.", "The Warrior is skilled in every aspect of combat, a well rounded fighter.", "The Shieldsman has perfected the art of shield combat, using her trusty shield for both offense and defence", "The Thief uses stealth to his advantage, attacking before the enemy is aware of his presence gives him the upper hand going into fights."};
-     for(int i = 0; i < 6; i++){
-         cout << i+1 << ". " << characters[i] << ":" << endl << descriptions[i] << endl << endl;
-     }
-     // Asking the user for thei input for which character they wish to play and using a switch statement to use the right class.
-     char choice = 0;
-     cout << "please input the number corresponding to the class you want to play." << endl;
-     cin >> choice;
-     switch(choice){
+    // a string array filled with the characters the user can select is created. Allowing a loop to be made to list the possible characters to the user. preventing too much repitition in the code.
+    string characters[6] = {"Brute","Warlock","Goblin","Warrior","Shieldsman","Thief"};
+    string descriptions[6] = {"The Brute has never lost a fight in his life, in hand to hand combat his raw strength is unmatched. Unluckily with his immense power comes a lack of speed.", "The Warlock has been training to wield magic since birth, he is a fragile fighter but can dish out a lot of damage quick.", "The Goblin is extremely quick, and can catch fighters off guard with rapid counter attacks, but is quite frail.", "The Warrior is skilled in every aspect of combat, a well rounded fighter.", "The Shieldsman has perfected the art of shield combat, using her trusty shield for both offense and defence", "The Thief uses stealth to his advantage, attacking before the enemy is aware of his presence gives him the upper hand going into fights."};
+    for(int i = 0; i < 6; i++){
+        cout << i+1 << ". " << characters[i] << ":" << endl << descriptions[i] << endl << endl;
+    }
+    // Asking the user for thei input for which character they wish to play and using a switch statement to use the right class.
+    char choice = 0;
+    cout << "please input the number corresponding to the class you want to play." << endl;
+    cin >> choice;
+    switch(choice){
         case '1':
-        user = new Brute;
-        cout << "you have chosen the Brute class" << endl;
-        break;
+            user = new Brute();
+            cout << "you have chosen the Brute class" << endl;
+            break;
         case '2':
-        user = new Warlock;
-        cout << "you have chosen the Warlock class" << endl;
-        break;
+            user = new Warlock();
+            cout << "you have chosen the Warlock class" << endl;
+            break;
         case '3':
-        user = new Goblin;
-        cout << "you have chosen the Goblin class" << endl;
-        break;
+            user = new Goblin();
+            cout << "you have chosen the Goblin class" << endl;
+            break;
         case '4':
-        user = new Warrior;
-        cout << "you have chosen the Warrior class" << endl;
-        break;
+            user = new Warrior();
+            cout << "you have chosen the Warrior class" << endl;
+            break;
         case '5':
-        user = new Shieldsman;
-        cout << "you have chosen the Shieldsman class" << endl;
-        break;
+            user = new Shieldsman();
+            cout << "you have chosen the Shieldsman class" << endl;
+            break;
         case '6':
-        user = new Thief;
-        cout << "you have chosen the Thief class" << endl;
-        break;
+            user = new Thief();
+            cout << "you have chosen the Thief class" << endl;
+            break;
         default:
-        user = new Warrior;
-        cout << "by default the Warrior class has been chosen" << endl;
+            user = new Warrior();
+            cout << "by default the Warrior class has been chosen" << endl;
+
 
         // Outputting the story, and using cin to ask the user to pick their path when the story begins, this will change what enemies they face.
+
         cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl << "a quick search of this cave reveals a hidden entrance into the castles dungeons." << endl << "you make your way through to the dungeon and are instantly met with a decison." << endl << "do you decide to move or down from the dungeons? " << endl << "1 for up, 2 for down" << endl;
         int UorD;
         cin >> UorD;
@@ -72,9 +77,9 @@ using namespace std;
         }
         else{
             cout << endl << endl << "you travel furhter into the depths of the castles dungeons, as you travel furter and further lower, you reach a large open cavern" << endl << "in the darkness you spot a dark figure walking towards you" << endl << "as it walks into the light you spot its hollow body, its a skeleton!" << endl << "how is this even possble? your thoughts are quickly interupted" << endl << "this is no time to ponder, its time to fight!" << endl;
-            }
-        return UorD;
-    }
+        }
+
+    return UorD;
 }
 
 // function that will execute all the code required to run the game through completely.
@@ -125,6 +130,7 @@ void Game::endGame(){
 void Game::final(){
     cout << "with the death of Lord Drace, the village people were once again free people" << endl << "The castle was taken down and the materials were used to build a wall around the village to keep the villagers safe" << endl << "you were praised as the hero of the village, all the village people look up to you" << endl << endl << "so what journey comes next? " << endl;
 }
+
 
 // a function that can be called that will stop the game from running any further.
 void Game::end(){

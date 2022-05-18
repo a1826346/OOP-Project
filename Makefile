@@ -1,0 +1,2 @@
+output: main.cpp Game.cpp Character.cpp Computer.cpp Player.cpp Brute.cpp Goblin.cpp Lord.cpp Move.cpp Skeleton.cpp Thief.cpp Warlock.cpp Warrior.cpp Shieldsman.cpp UndeadKnight.cpp
+	g++ -o output main.cpp Game.cpp Character.cpp Computer.cpp Player.cpp Brute.cpp Goblin.cpp Lord.cpp Move.cpp Skeleton.cpp Thief.cpp Warlock.cpp Warrior.cpp Shieldsman.cpp UndeadKnight.cpp
