@@ -9,7 +9,6 @@ Warrior::Warrior(){
     currentMagic = magicMax;
     maxMoves = 4;
     classType = "Warrior";
-    generateMoves();
 }
 
 void Warrior::generateMoves(){

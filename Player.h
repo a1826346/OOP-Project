@@ -9,6 +9,7 @@ class Player : public Character{
     protected:
         int magicMax;
         int currentMagic;
+        std::string classType;
     public:
         Player();
         ~Player();
@@ -24,6 +25,7 @@ class Player : public Character{
 
         int getMagicMax();
         int getCurrentMagic();
+        std::string getClassType();
 
 
         void gainMagic(int gain);

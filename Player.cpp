@@ -8,10 +8,9 @@ using namespace std::chrono;
 
 /** default player constructor */
 Player::Player(){
-    speed = 5;
     magicMax = 50;
-    maxMoves = 1;
-    classType = "Player Class";
+    currentMagic = magicMax;
+    classType = "Player";
 }
 
 /**  sets the player's speed */
@@ -37,6 +36,11 @@ void Player::setClassType(std::string _classType){
 /** returns the player's maximum amount of magic */
 int Player::getMagicMax(){
     return magicMax;
+}
+
+/** returns the character's class type */
+std::string Player::getClassType(){
+    return classType;
 }
 
 /** returns the player's current magic */

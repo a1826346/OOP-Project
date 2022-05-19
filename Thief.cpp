@@ -9,7 +9,6 @@ Thief::Thief(){
     currentMagic = magicMax;
     maxMoves = 4;
     classType = "Thief";
-    generateMoves();
 }
 
 void Thief::generateMoves(){

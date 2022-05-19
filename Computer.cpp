@@ -20,7 +20,7 @@ void Computer::inputMove(){
 }
 
 /** function for computer to use move and apply its effects on player object */
-void Computer::useMove(Move _move, Character &_player){
+void Computer::useMove(Move _move, Player &_player){
     int blockedChance = 0;
     if (_player.getClassType() == "Shieldsman"){
         blockedChance = 20;
