@@ -2,7 +2,7 @@
 #define COMPUTER_H
 
 #include "Move.h"
-#include "Character.h"
+#include "Player.h"
 
 class Computer : public Character{
     protected:
@@ -13,7 +13,7 @@ class Computer : public Character{
 
         std::string getName();
         void inputMove();
-        void useMove(Move _move, Character &_player);
+        void useMove(Move _move, Player &_player);
 };
 
 #endif //COMPUTER_H

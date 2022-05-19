@@ -9,7 +9,6 @@ Shieldsman::Shieldsman(){
     currentMagic = magicMax;
     maxMoves = 4;
     classType = "Shieldsman";
-    generateMoves();
 }
 
 void Shieldsman::generateMoves(){

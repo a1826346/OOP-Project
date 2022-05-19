@@ -9,7 +9,6 @@ Warlock::Warlock(){
     currentMagic = magicMax;
     maxMoves = 4;
     classType = "Warlock";
-    generateMoves();
 }
 
 void Warlock::generateMoves(){

@@ -29,37 +29,54 @@ int Game::startMenu(){
     for(int i = 0; i < 6; i++){
         cout << i+1 << ". " << characters[i] << ":" << endl << descriptions[i] << endl << endl;
     }
-    // Asking the user for thei input for which character they wish to play and using a switch statement to use the right class.
+    // Asking the user for their input for which character they wish to play and using a switch statement to use the right class.
     char choice = 0;
     cout << "please input the number corresponding to the class you want to play." << endl;
     cin >> choice;
+    int userClass;
+
+    Player *a = new Brute();    Player *b = new Warlock();  Player *c = new Goblin();   Player *d = new Warrior();  Player *e = new Shieldsman();   Player *f = new Thief();
     switch(choice){
         case '1':
-            user = new Brute();
+            user = a;
+            delete b;   delete c;   delete d;   delete e;   delete f;
+            a->generateMoves();
             cout << "you have chosen the Brute class" << endl;
             break;
         case '2':
-            user = new Warlock();
+            user = b;
+            b->generateMoves();
+            delete a;   delete c;   delete d;   delete e;   delete f;
             cout << "you have chosen the Warlock class" << endl;
             break;
         case '3':
-            user = new Goblin();
+            user = c;
+            c->generateMoves();
+            delete a;   delete b;   delete d;   delete e;   delete f;
             cout << "you have chosen the Goblin class" << endl;
             break;
         case '4':
-            user = new Warrior();
+            user = d;
+            d->generateMoves();
+            delete a;   delete b;   delete c;   delete e;   delete f;
             cout << "you have chosen the Warrior class" << endl;
             break;
         case '5':
-            user = new Shieldsman();
+            user = e;
+            e->generateMoves();
+            delete a;   delete b;   delete c;   delete d;   delete f;
             cout << "you have chosen the Shieldsman class" << endl;
             break;
         case '6':
-            user = new Thief();
+            user = f;
+            f->generateMoves();
+            delete a;   delete b;   delete c;   delete d;   delete f;
             cout << "you have chosen the Thief class" << endl;
             break;
         default:
-            user = new Warrior();
+            user = d;
+            d->generateMoves();
+            delete a;   delete b;   delete c;   delete e;   delete f;
             cout << "by default the Warrior class has been chosen" << endl;
     }
 
