@@ -159,7 +159,7 @@ void Game::final(){
 void Game::end(){
     running = 0;
     //exit or abort function?
-    exit;
+    abort;
 }
 
 // a function to check whether the game is currently running, mostly used for other functions to make sure the game is in progress.
