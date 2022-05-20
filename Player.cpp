@@ -86,16 +86,21 @@ void Player::inputMove(){
 /** function to use move and apply its effects on enemy object */
 void Player::useMove(Move _move, Character &_enemy){
     depleteMagic(_move.getMagicCost());
+    sleep_for(seconds(1));
     if (_move.genChance() < _move.getHitChance()){
-        sleep_for(seconds(1));
         if (_move.genChance() < _move.getCritChance()){
             _enemy.reduceHealth(_move.getDamage() * 2);
             gainHealth(_move.getHealAmount() * 2);
             _move.printAction();
+            std::cout << (_move.getDamage() * 2) << " damage dealt." << std::endl;
         }
-        _enemy.reduceHealth(_move.getDamage());
+        else {
+            _enemy.reduceHealth(_move.getDamage());
         gainHealth(_move.getHealAmount());
         _move.printAction();
+        std::cout << _move.getDamage() << " damage dealt." << std::endl;
+        }
+        
 
         if (currentHealth > maxHealth){
         currentHealth -= (currentHealth - maxHealth);

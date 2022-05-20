@@ -12,6 +12,11 @@
 #include "Game.h"
 #include "Lord.h"
 #include "UndeadKnight.h"
+#include <chrono>
+#include <thread>
+
+using namespace std::this_thread; // sleep_for, sleep_until
+using namespace std::chrono;
 
 using namespace std;
 
@@ -101,23 +106,28 @@ void Game::run(){
     // running the start of the game.
     decide = startMenu();
     Lord Drace;
+    Drace.generateMoves();
     // starting the fight based off the decision in the start.
     if(decide == 1){
     UndeadKnight undead_1;
+    undead_1.generateMoves();
     startFight(*user, undead_1);
     }
     else{
     Skeleton skeleton_1;
+    skeleton_1.generateMoves();
     startFight(*user, skeleton_1);
     }
     // running the mid game and starting the second fights of the story.
     midGame();
     if(decide == 1){
     UndeadKnight undead_2;
+    undead_2.generateMoves();
     startFight(*user, undead_2);
     }
     else{
     Skeleton skeleton_2;
+    skeleton_2.generateMoves();
     startFight(*user, skeleton_2);
     }
     // running the end of the story both pre and post boss, with the boss fight in between.
@@ -177,13 +187,17 @@ void Game::startFight(Player &_user, Computer &_enemy){
         _enemy.inputMove();
 
         // using the moves that the user chose and the computer was randomly allocated.
+        cout << "You used " << (_user.getChosenMove()).getMoveName() << "." << endl;
         _user.useMove(_user.getChosenMove(), _enemy);
+        sleep_for(seconds(1));
+        cout << "The " << _enemy.getName() << " used " << (_enemy.getChosenMove()).getMoveName() << "." << endl;
         _enemy.useMove(_enemy.getChosenMove(), _user);
 
         //displaying the health of the users character and the enemy to the user.
+        sleep_for(seconds(1));
         cout << "Player health: " << _user.getCurrentHealth() << endl;
         cout << _enemy.getName() << " health: " << _enemy.getCurrentHealth() << endl;
-
+        sleep_for(seconds(1));
 
         // Work in progress speed system
         // _user.inputMove();
