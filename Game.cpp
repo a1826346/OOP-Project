@@ -205,6 +205,6 @@ Game::Game(){
 
 // default deconstructor.
 Game::~Game(){
-    //delete user;
+    delete user;
 }
 

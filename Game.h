@@ -8,7 +8,7 @@
 class Game{
     protected:
         bool running;
-        Player* user;
+        Player *user;
 
     public:
         Game();
