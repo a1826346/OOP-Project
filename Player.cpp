@@ -8,10 +8,9 @@ using namespace std::chrono;
 
 /** default player constructor */
 Player::Player(){
-    speed = 5;
     magicMax = 50;
-    maxMoves = 1;
-    classType = "Player Class";
+    currentMagic = magicMax;
+    classType = "Player";
 }
 
 /**  sets the player's speed */
@@ -37,6 +36,11 @@ void Player::setClassType(std::string _classType){
 /** returns the player's maximum amount of magic */
 int Player::getMagicMax(){
     return magicMax;
+}
+
+/** returns the character's class type */
+std::string Player::getClassType(){
+    return classType;
 }
 
 /** returns the player's current magic */
@@ -82,16 +86,21 @@ void Player::inputMove(){
 /** function to use move and apply its effects on enemy object */
 void Player::useMove(Move _move, Character &_enemy){
     depleteMagic(_move.getMagicCost());
+    sleep_for(seconds(1));
     if (_move.genChance() < _move.getHitChance()){
-        sleep_for(seconds(1));
         if (_move.genChance() < _move.getCritChance()){
             _enemy.reduceHealth(_move.getDamage() * 2);
             gainHealth(_move.getHealAmount() * 2);
             _move.printAction();
+            std::cout << (_move.getDamage() * 2) << " damage dealt." << std::endl;
         }
-        _enemy.reduceHealth(_move.getDamage());
+        else {
+            _enemy.reduceHealth(_move.getDamage());
         gainHealth(_move.getHealAmount());
         _move.printAction();
+        std::cout << _move.getDamage() << " damage dealt." << std::endl;
+        }
+        
 
         if (currentHealth > maxHealth){
         currentHealth -= (currentHealth - maxHealth);

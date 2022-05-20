@@ -9,7 +9,6 @@ Goblin::Goblin(){
     currentMagic = magicMax;
     maxMoves = 4;
     classType = "Goblin";
-    generateMoves();
 }
 
 void Goblin::generateMoves(){

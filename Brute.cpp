@@ -9,7 +9,6 @@ Brute::Brute(){
     currentMagic = magicMax;
     maxMoves = 4;
     classType = "Brute";
-    generateMoves();
 }
 
 void Brute::generateMoves(){

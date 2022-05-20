@@ -6,8 +6,10 @@
 Character::Character(){
     maxHealth = 100;
     currentHealth = maxHealth;
-    maxMoves = 10;
-    moveNum = 0;
+    maxMoves = 1;
+    moveNum = 1;
+    speed = 5;
+    chosenMove;
 }
 /** sets up a character with specified health maxMoves or moveNum */
 Character::Character(int Health, int MaxMoves, int MoveNum){
@@ -76,11 +78,6 @@ void Character::inputMove(){
 void Character::generateMoves(){
     Move attack;
     moveList[0] = attack;
-}
-
-/** returns the character's class type */
-std::string Character::getClassType(){
-    return classType;
 }
 
 /** default character destructor */

@@ -12,6 +12,11 @@
 #include "Game.h"
 #include "Lord.h"
 #include "UndeadKnight.h"
+#include <chrono>
+#include <thread>
+
+using namespace std::this_thread; // sleep_for, sleep_until
+using namespace std::chrono;
 
 using namespace std;
 
@@ -29,37 +34,54 @@ int Game::startMenu(){
     for(int i = 0; i < 6; i++){
         cout << i+1 << ". " << characters[i] << ":" << endl << descriptions[i] << endl << endl;
     }
-    // Asking the user for thei input for which character they wish to play and using a switch statement to use the right class.
+    // Asking the user for their input for which character they wish to play and using a switch statement to use the right class.
     char choice = 0;
     cout << "please input the number corresponding to the class you want to play." << endl;
     cin >> choice;
+    int userClass;
+
+    Player *a = new Brute();    Player *b = new Warlock();  Player *c = new Goblin();   Player *d = new Warrior();  Player *e = new Shieldsman();   Player *f = new Thief();
     switch(choice){
         case '1':
-            user = new Brute();
+            user = a;
+            delete b;   delete c;   delete d;   delete e;   delete f;
+            a->generateMoves();
             cout << "you have chosen the Brute class" << endl;
             break;
         case '2':
-            user = new Warlock();
+            user = b;
+            b->generateMoves();
+            delete a;   delete c;   delete d;   delete e;   delete f;
             cout << "you have chosen the Warlock class" << endl;
             break;
         case '3':
-            user = new Goblin();
+            user = c;
+            c->generateMoves();
+            delete a;   delete b;   delete d;   delete e;   delete f;
             cout << "you have chosen the Goblin class" << endl;
             break;
         case '4':
-            user = new Warrior();
+            user = d;
+            d->generateMoves();
+            delete a;   delete b;   delete c;   delete e;   delete f;
             cout << "you have chosen the Warrior class" << endl;
             break;
         case '5':
-            user = new Shieldsman();
+            user = e;
+            e->generateMoves();
+            delete a;   delete b;   delete c;   delete d;   delete f;
             cout << "you have chosen the Shieldsman class" << endl;
             break;
         case '6':
-            user = new Thief();
+            user = f;
+            f->generateMoves();
+            delete a;   delete b;   delete c;   delete d;   delete f;
             cout << "you have chosen the Thief class" << endl;
             break;
         default:
-            user = new Warrior();
+            user = d;
+            d->generateMoves();
+            delete a;   delete b;   delete c;   delete e;   delete f;
             cout << "by default the Warrior class has been chosen" << endl;
     }
 
@@ -84,23 +106,28 @@ void Game::run(){
     // running the start of the game.
     decide = startMenu();
     Lord Drace;
+    Drace.generateMoves();
     // starting the fight based off the decision in the start.
     if(decide == 1){
     UndeadKnight undead_1;
+    undead_1.generateMoves();
     startFight(*user, undead_1);
     }
     else{
     Skeleton skeleton_1;
+    skeleton_1.generateMoves();
     startFight(*user, skeleton_1);
     }
     // running the mid game and starting the second fights of the story.
     midGame();
     if(decide == 1){
     UndeadKnight undead_2;
+    undead_2.generateMoves();
     startFight(*user, undead_2);
     }
     else{
     Skeleton skeleton_2;
+    skeleton_2.generateMoves();
     startFight(*user, skeleton_2);
     }
     // running the end of the story both pre and post boss, with the boss fight in between.
@@ -160,13 +187,17 @@ void Game::startFight(Player &_user, Computer &_enemy){
         _enemy.inputMove();
 
         // using the moves that the user chose and the computer was randomly allocated.
+        cout << "You used " << (_user.getChosenMove()).getMoveName() << "." << endl;
         _user.useMove(_user.getChosenMove(), _enemy);
+        sleep_for(seconds(1));
+        cout << "The " << _enemy.getName() << " used " << (_enemy.getChosenMove()).getMoveName() << "." << endl;
         _enemy.useMove(_enemy.getChosenMove(), _user);
 
         //displaying the health of the users character and the enemy to the user.
+        sleep_for(seconds(1));
         cout << "Player health: " << _user.getCurrentHealth() << endl;
         cout << _enemy.getName() << " health: " << _enemy.getCurrentHealth() << endl;
-
+        sleep_for(seconds(1));
 
         // Work in progress speed system
         // _user.inputMove();

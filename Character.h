@@ -7,14 +7,13 @@
 
 class Character {
 protected:
-    Move *moveList = new Move[maxMoves];
     int currentHealth;
     int maxHealth;
     int maxMoves;
     int moveNum;
     int speed;
     Move chosenMove;
-    std::string classType;
+    Move *moveList = new Move[10];
 
 public:
     Character();
@@ -22,7 +21,6 @@ public:
     ~Character();
 
     void setMaxMoves(int _maxMoves);
-    std::string getClassType();
     int getSpeed();
     int getMaxMoves();
     int getMoveNum();

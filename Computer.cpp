@@ -20,17 +20,18 @@ void Computer::inputMove(){
 }
 
 /** function for computer to use move and apply its effects on player object */
-void Computer::useMove(Move _move, Character &_player){
+void Computer::useMove(Move _move, Player &_player){
     int blockedChance = 0;
     if (_player.getClassType() == "Shieldsman"){
         blockedChance = 20;
     }
+    sleep_for(seconds(1));
     if (_move.genChance() < _move.getHitChance()){
-        sleep_for(seconds(1));
         if (_move.genChance() < _move.getCritChance()){
             _player.reduceHealth(_move.getDamage() * 2);
             gainHealth(_move.getHealAmount() * 2);
             _move.printAction();
+            std::cout << (_move.getDamage() * 2) << " damage dealt." << std::endl;
 
             sleep_for(seconds(1));
             if (_move.getDamage() > 0 && _move.genChance() <= blockedChance){
@@ -38,9 +39,13 @@ void Computer::useMove(Move _move, Character &_player){
                 std::cout << "The " << _move.getMoveName() << " was however blocked." << std::endl;
             }
         }
-        _player.reduceHealth(_move.getDamage());
-        gainHealth(_move.getHealAmount());
-        _move.printAction();
+        else {
+            _player.reduceHealth(_move.getDamage());
+            gainHealth(_move.getHealAmount());
+            _move.printAction();
+            std::cout << _move.getDamage() << " damage dealt." << std::endl;
+        }
+        
 
         sleep_for(seconds(1));
         if (_move.getDamage() > 0 && _move.genChance() <= blockedChance){
