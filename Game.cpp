@@ -14,6 +14,7 @@
 #include "UndeadKnight.h"
 #include <chrono>
 #include <thread>
+#include <stdlib.h>
 
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono;
@@ -79,10 +80,10 @@ int Game::startMenu(){
             cout << "you have chosen the Thief class" << endl;
             break;
         default:
-            user = d;
-            d->generateMoves();
-            delete a;   delete b;   delete c;   delete e;   delete f;
-            cout << "by default the Warrior class has been chosen" << endl;
+            delete a;   delete b;   delete c;   delete d;  delete e;   delete f;
+            cout << "incorrect input" << endl;
+            end();
+
     }
 
 
@@ -94,8 +95,12 @@ int Game::startMenu(){
     if(UorD == 1){
         cout << endl << endl << "you travel upstairs to the main halls of the castle, as you travel the halls you are met by a knight in black armour" << endl << "an undead knight! a story of legend brought to life?" << endl << "nevermind that right now, you've got a batle to win!" << endl;
     }
-    else{
+    else if(UorD == 2){
         cout << endl << endl << "you travel furhter into the depths of the castles dungeons, as you travel furter and further lower, you reach a large open cavern" << endl << "in the darkness you spot a dark figure walking towards you" << endl << "as it walks into the light you spot its hollow body, its a skeleton!" << endl << "how is this even possble? your thoughts are quickly interupted" << endl << "this is no time to ponder, its time to fight!" << endl;
+    }
+    else{
+        cout << "incorrect input" << endl;
+        end();
     }
     return UorD;
 }
@@ -158,8 +163,7 @@ void Game::final(){
 // a function that can be called that will stop the game from running any further.
 void Game::end(){
     running = 0;
-    //exit or abort function?
-    abort;
+    exit(0);
 }
 
 // a function to check whether the game is currently running, mostly used for other functions to make sure the game is in progress.
