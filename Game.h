@@ -18,6 +18,8 @@ class Game{
         // basic deconstructor that will delete the user variable as its initialised using dynamic memory (new).
         ~Game();
 
+        // a function that simply prints a text divider to the terminal
+        void printLineDivider(bool _type);
         // a function that gives the backstory of the game and the player the option of character, and the option to change story progession.
         int startMenu();
         // a function that runs all the functions nessicary to run the game to completion.

@@ -176,6 +176,17 @@ bool Game::isRunning(){
     }
 }
 
+// a function that simply prints a text divider to the terminal
+void Game::printLineDivider(bool _type){
+    if (_type){
+        std::cout << "--------" << std::endl;
+    }
+    else{
+        std::cout << "========" << std::endl;
+    }
+    
+}
+
 // The function that starts a fight between a player and a computer class.
 void Game::startFight(Player &_user, Computer &_enemy){
     int userCurrentSpeed = _user.getSpeed();
