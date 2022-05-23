@@ -202,10 +202,8 @@ void Game::startFight(Player &_user, Computer &_enemy){
         _enemy.inputMove();
 
         // using the moves that the user chose and the computer was randomly allocated.
-        cout << "You used " << (_user.getChosenMove()).getMoveName() << "." << endl;
         _user.useMove(_user.getChosenMove(), _enemy);
         sleep_for(seconds(1));
-        cout << "The " << _enemy.getName() << " used " << (_enemy.getChosenMove()).getMoveName() << "." << endl;
         _enemy.useMove(_enemy.getChosenMove(), _user);
 
         //displaying the health of the users character and the enemy to the user.
@@ -213,26 +211,6 @@ void Game::startFight(Player &_user, Computer &_enemy){
         cout << "Player health: " << _user.getCurrentHealth() << endl;
         cout << _enemy.getName() << " health: " << _enemy.getCurrentHealth() << endl;
         sleep_for(seconds(1));
-
-        // Work in progress speed system
-        // _user.inputMove();
-        // userCurrentSpeed += (_user.getChosenMove()).getSpeed();
-        // playerIndex++;
-
-        // _enemy.inputMove();
-        // enemyCurrentSpeed += (_enemy.getChosenMove()).getSpeed();
-        // enemyIndex++;
-
-        // if (userCurrentSpeed >= enemyCurrentSpeed){
-        //     while (userCurrentSpeed >= enemyCurrentSpeed){
-        //         _user.useMove(_user.getChosenMove(), _enemy);
-        //         userCurrentSpeed -= (_user.getChosenMove()).getSpeed();
-        //     }
-        // }
-        // else {
-
-        // }
-
     }
     // ending the game if the users character dies.
     if (_user.isDead()){
