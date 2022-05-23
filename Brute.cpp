@@ -17,7 +17,7 @@ void Brute::generateMoves(){
     Move hammerSwing;
     hammerSwing.setMoveName("Hammer Swing");
     hammerSwing.setDescription("...");
-    hammerSwing.setActionText("...");
+    hammerSwing.setActionText("You swing your hammer precisely toward the enemy.");
     hammerSwing.setMagicCost(0);
     hammerSwing.setDamage(15);
     hammerSwing.setHitChance(90);
@@ -30,7 +30,7 @@ void Brute::generateMoves(){
     Move punch;
     punch.setMoveName("Punch");
     punch.setDescription("...");
-    punch.setActionText("...");
+    punch.setActionText("You punch the enemy.");
     punch.setMagicCost(0);
     punch.setDamage(10);
     punch.setHitChance(100);
@@ -43,12 +43,12 @@ void Brute::generateMoves(){
     Move frenzy;
     frenzy.setMoveName("Frenzy");
     frenzy.setDescription("...");
-    frenzy.setActionText("...");
+    frenzy.setActionText("You enter a state of frenzy, gaining a second wind while charging the enemy.");
     frenzy.setMagicCost(20);
     frenzy.setDamage(25);
     frenzy.setHitChance(90);
     frenzy.setCritChance(0);
-    frenzy.setHealAmount(0);
+    frenzy.setHealAmount(5);
     frenzy.setSpeed(6);
     moveList[2] = frenzy;
 
@@ -56,10 +56,10 @@ void Brute::generateMoves(){
     Move heavySwing;
     heavySwing.setMoveName("Heavy Swing");
     heavySwing.setDescription("...");
-    heavySwing.setActionText("...");
+    heavySwing.setActionText("You blindly swing your hammer with great strength.");
     heavySwing.setMagicCost(0);
-    heavySwing.setDamage(25);
-    heavySwing.setHitChance(80);
+    heavySwing.setDamage(35);
+    heavySwing.setHitChance(40);
     heavySwing.setCritChance(15);
     heavySwing.setHealAmount(0);
     heavySwing.setSpeed(1);
