@@ -189,26 +189,28 @@ void Game::printLineDivider(bool _type){
 
 // The function that starts a fight between a player and a computer class.
 void Game::startFight(Player &_user, Computer &_enemy){
-    int userCurrentSpeed = _user.getSpeed();
-    int enemyCurrentSpeed = _enemy.getSpeed();
-
-    int playerIndex = 0;
-    int enemyIndex = 0;
+    _user.setCurrentMagic(_user.getMagicMax());
     // checking to make sure both fighters are still alive to continue the fight.
     while (_user.isDead() == false && _enemy.isDead() == false){
         // displaying moves to the user, letting them chose a move and choosing a move for the enemy.
+        printLineDivider(0);
         _user.displayMoves();
+        printLineDivider(0);
         _user.inputMove();
         _enemy.inputMove();
 
         // using the moves that the user chose and the computer was randomly allocated.
+        printLineDivider(1);
         _user.useMove(_user.getChosenMove(), _enemy);
+        printLineDivider(1);
         sleep_for(seconds(1));
         _enemy.useMove(_enemy.getChosenMove(), _user);
 
         //displaying the health of the users character and the enemy to the user.
         sleep_for(seconds(1));
+        printLineDivider(0);
         cout << "Player health: " << _user.getCurrentHealth() << endl;
+        cout << "Player magic: " << _user.getCurrentMagic() << endl;
         cout << _enemy.getName() << " health: " << _enemy.getCurrentHealth() << endl;
         sleep_for(seconds(1));
     }
@@ -218,7 +220,9 @@ void Game::startFight(Player &_user, Computer &_enemy){
     }
     // showing the user the enemy was defeated if they beat the enemy.
         else{
-        cout << "The " << _enemy.getName() << " was defeated." << std::endl;
+            printLineDivider(0);
+            cout << "The " << _enemy.getName() << " was defeated." << std::endl;
+            printLineDivider(0);
     }
 }
 
