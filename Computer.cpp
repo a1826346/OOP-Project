@@ -9,7 +9,6 @@ using namespace std::chrono;
 /** default computer constructor */
 Computer::Computer(){
     maxMoves = 0;
-    generateMoves();
 }
 
 /** computer's randomized move input */
