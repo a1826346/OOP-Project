@@ -42,13 +42,12 @@ public:
     void gainHealth(int);
     void reduceHealth(int);
 
-    // virtual functions that are passed on to sub classes.
-    virtual void inputMove();
-    virtual void generateMoves();
+    // virtual abstract functions to be passed to child classes.
+    virtual void inputMove() = 0;
+    virtual void generateMoves() = 0;
 
     // a function that returns if the character is alive or not.
     bool isDead();
-
 };
 
 #endif
