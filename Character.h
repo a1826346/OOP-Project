@@ -7,30 +7,46 @@
 
 class Character {
 protected:
+    // variables that are foundational for any character in the game.
     int currentHealth;
     int maxHealth;
     int maxMoves;
     int moveNum;
     int speed;
+
+    // a variable of type Move that holds the move that is chosen by the user.
     Move chosenMove;
+
+    // a vector of the class Move that will house the moves for each character in the game.
     Move *moveList = new Move[10];
 
 public:
+    // basic constructor that is built off for the player and computer class.
     Character();
     Character(int Health, int MaxMoves, int MoveNum);
+    // basic deconstructor.
     ~Character();
 
+    // setting the amount of moves for the character.
     void setMaxMoves(int _maxMoves);
+
+    // returning variables to the user from the protected part of the class.
     int getSpeed();
     int getMaxMoves();
     int getMoveNum();
     int getCurrentHealth();
     int getMaxHealth();
     Move getChosenMove();
+
+    // manipulating health up or down.
     void gainHealth(int);
     void reduceHealth(int);
+
+    // virtual functions that are passed on to sub classes.
     virtual void inputMove();
     virtual void generateMoves();
+
+    // a function that returns if the character is alive or not.
     bool isDead();
 
 };
