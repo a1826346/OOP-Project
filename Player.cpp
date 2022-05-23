@@ -85,31 +85,43 @@ void Player::inputMove(){
 
 /** function to use move and apply its effects on enemy object */
 void Player::useMove(Move _move, Character &_enemy){
+    std::cout << "You used " << _move.getMoveName() << "." << std::endl;
+    int damageVal = _move.getDamage();
+    int healVal = _move.getHealAmount();
+    bool crit = false;
     depleteMagic(_move.getMagicCost());
-    sleep_for(seconds(1));
     if (_move.genChance() < _move.getHitChance()){
+        sleep_for(seconds(1));
         if (_move.genChance() < _move.getCritChance()){
-            _enemy.reduceHealth(_move.getDamage() * 2);
-            gainHealth(_move.getHealAmount() * 2);
+            damageVal = damageVal * 2;
+            healVal = healVal * 2;
             _move.printAction();
-            std::cout << (_move.getDamage() * 2) << " damage dealt." << std::endl;
+            crit = true;
+            std::cout << "It was a critical success!" << std::endl;
         }
-        else {
-            _enemy.reduceHealth(_move.getDamage());
-        gainHealth(_move.getHealAmount());
-        _move.printAction();
-        std::cout << _move.getDamage() << " damage dealt." << std::endl;
+        _enemy.reduceHealth(damageVal);
+        gainHealth(healVal);
+        if (!crit){
+            _move.printAction();
         }
-        
 
         if (currentHealth > maxHealth){
-        currentHealth -= (currentHealth - maxHealth);
+            currentHealth -= (currentHealth - maxHealth);
+            healVal = currentHealth - maxHealth;
+        }
+
+        if (damageVal > 0 && healVal == 0){
+            std::cout << damageVal << " damage was dealt." << std::endl;
+        } else if(damageVal == 0 && healVal > 0){
+            std::cout << healVal << " health was healed." << std::endl;
+        } else if(damageVal > 0 && healVal > 0){
+            std::cout << damageVal << " damage was dealt." << std::endl;
+            std::cout << healVal << " health was healed." << std::endl;
         }
     }
     else {
         std::cout << "The " << _move.getMoveName() << " failed." << std::endl;
     }
-
 }
 
 /** displays the player's available moves */
