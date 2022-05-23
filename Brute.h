@@ -5,10 +5,13 @@
 
 class Brute : public Player{
     private:
-        // std::string name = "?";
+        std::string name = "Brute";
     public:
+        // constructor to set the stats for the player if this class is chosen.
         Brute();
+        // deconstructor.
         ~Brute();
+        // function used to add unique moves to the moveList vector.
         void generateMoves();
 };
 

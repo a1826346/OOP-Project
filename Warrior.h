@@ -5,10 +5,13 @@
 
 class Warrior : public Player {
     private:
-        //std::string name = "?";
+        std::string name = "Warrior";
     public:
+        // constructor to set the stats for the player if this class is chosen.
         Warrior();
+        // deconstructor.
         ~Warrior();
+        // function used to add unique moves to the moveList vector.
         void generateMoves();
 };
 

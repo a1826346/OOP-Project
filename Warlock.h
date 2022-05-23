@@ -5,10 +5,13 @@
 
 class Warlock : public Player {
     private:
-        //std::string name = "?";
+        std::string name = "Warlock";
     public:
+        
         Warlock();
+        // deconstructor.
         ~Warlock();
+        // function used to add unique moves to the moveList vector.
         void generateMoves();
 };
 
