@@ -16,7 +16,7 @@ void Thief::generateMoves(){
     Move sneakAttack;
     sneakAttack.setMoveName("Sneak Attack");
     sneakAttack.setDescription("...");
-    sneakAttack.setActionText("...");
+    sneakAttack.setActionText("You manage to evade the enemy's vision before plunging your blade into them.");
     sneakAttack.setMagicCost(0);
     sneakAttack.setDamage(20);
     sneakAttack.setHitChance(80);
@@ -29,7 +29,7 @@ void Thief::generateMoves(){
     Move footSweep;
     footSweep.setMoveName("Foot Sweep");
     footSweep.setDescription("...");
-    footSweep.setActionText("...");
+    footSweep.setActionText("You sweep the enemy's feet with your own, sending them off balance.");
     footSweep.setMagicCost(0);
     footSweep.setDamage(10);
     footSweep.setHitChance(100);
@@ -42,7 +42,7 @@ void Thief::generateMoves(){
     Move shadowRune;
     shadowRune.setMoveName("Rune of Shadows");
     shadowRune.setDescription("...");
-    shadowRune.setActionText("...");
+    shadowRune.setActionText("A wave of shadows is sent forth toward the enemy, dealing psychic damage.");
     shadowRune.setMagicCost(20);
     shadowRune.setDamage(120);
     shadowRune.setHitChance(100);
@@ -55,7 +55,7 @@ void Thief::generateMoves(){
     Move shadowAttack;
     shadowAttack.setMoveName("Into the Shadows");
     shadowAttack.setDescription("...");
-    shadowAttack.setActionText("...");
+    shadowAttack.setActionText("You emerge from the shadows catching the enemy off-guard with your blade.");
     shadowAttack.setMagicCost(0);
     shadowAttack.setDamage(30);
     shadowAttack.setHitChance(60);
