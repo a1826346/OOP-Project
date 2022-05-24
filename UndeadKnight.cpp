@@ -9,7 +9,7 @@ UndeadKnight::UndeadKnight(){
 void UndeadKnight::generateMoves(){
     Move strike;
     strike.setMoveName("Strike");
-    strike.setActionText("...");
+    strike.setActionText("The Undead Knight strikes you with their clenched fist.");
     strike.setMagicCost(0);
     strike.setDamage(5);
     strike.setHitChance(100);
@@ -20,7 +20,7 @@ void UndeadKnight::generateMoves(){
 
     Move Overpower;
     Overpower.setMoveName("Overpower");
-    Overpower.setActionText("...");
+    Overpower.setActionText("The Undead Knight overpowers you, swiping you across the room.");
     Overpower.setMagicCost(0);
     Overpower.setDamage(15);
     Overpower.setHitChance(70);
