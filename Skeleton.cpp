@@ -9,7 +9,7 @@ Skeleton::Skeleton(){
 void Skeleton::generateMoves(){
     Move stab;
     stab.setMoveName("Stab");
-    stab.setActionText("...");
+    stab.setActionText("The skeleton thrusts its rusty sword toward you.");
     stab.setMagicCost(0);
     stab.setDamage(5);
     stab.setHitChance(100);
@@ -20,7 +20,7 @@ void Skeleton::generateMoves(){
 
     Move chargedPunch;
     chargedPunch.setMoveName("Charged Punch");
-    chargedPunch.setActionText("...");
+    chargedPunch.setActionText("The skeleton appears to pull back its bony fist before launching it back at you.");
     chargedPunch.setMagicCost(0);
     chargedPunch.setDamage(10);
     chargedPunch.setHitChance(80);
