@@ -30,7 +30,7 @@ void Shieldsman::generateMoves(){
     Move spearThrow;
     spearThrow.setMoveName("Spear Throw");
     spearThrow.setDescription("...");
-    spearThrow.setActionText("...");
+    spearThrow.setActionText("You accurately throw your spear toward the enemy.");
     spearThrow.setMagicCost(0);
     spearThrow.setDamage(15);
     spearThrow.setHitChance(90);
@@ -43,7 +43,7 @@ void Shieldsman::generateMoves(){
     Move spiritShield;
     spiritShield.setMoveName("Spirit Shield");
     spiritShield.setDescription("...");
-    spiritShield.setActionText("...");
+    spiritShield.setActionText("A spirit shield is sent forth, slamming into the enemy.");
     spiritShield.setMagicCost(20);
     spiritShield.setDamage(25);
     spiritShield.setHitChance(100);
@@ -56,7 +56,7 @@ void Shieldsman::generateMoves(){
     Move shieldTornado;
     shieldTornado.setMoveName("Shield Tornado");
     shieldTornado.setDescription("...");
-    shieldTornado.setActionText("...");
+    shieldTornado.setActionText("You swing your shield in a circular motion with all your might.");
     shieldTornado.setMagicCost(0);
     shieldTornado.setDamage(30);
     shieldTornado.setHitChance(70);
