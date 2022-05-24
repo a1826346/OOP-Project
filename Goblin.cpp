@@ -17,7 +17,7 @@ void Goblin::generateMoves(){
     Move speedSweep;
     speedSweep.setMoveName("Speed Sweep");
     speedSweep.setDescription("...");
-    speedSweep.setActionText("...");
+    speedSweep.setActionText("You quickly sweep the enemy's feet with your own, sending them off balance.");
     speedSweep.setMagicCost(0);
     speedSweep.setDamage(15);
     speedSweep.setHitChance(90);
@@ -30,7 +30,7 @@ void Goblin::generateMoves(){
     Move punch;
     punch.setMoveName("Punch");
     punch.setDescription("...");
-    punch.setActionText("...");
+    punch.setActionText("You punch the enemy.");
     punch.setMagicCost(0);
     punch.setDamage(10);
     punch.setHitChance(100);
@@ -43,7 +43,7 @@ void Goblin::generateMoves(){
     Move duplicate;
     duplicate.setMoveName("Duplicate");
     duplicate.setDescription("...");
-    duplicate.setActionText("...");
+    duplicate.setActionText("You duplicate, attacking the enemy in two forms simultaneously.");
     duplicate.setMagicCost(40);
     duplicate.setDamage(20);
     duplicate.setHitChance(90);
@@ -56,7 +56,7 @@ void Goblin::generateMoves(){
     Move multiDagger;
     multiDagger.setMoveName("1000 Daggers");
     multiDagger.setDescription("...");
-    multiDagger.setActionText("...");
+    multiDagger.setActionText("You throw a flurry of magical daggers toward the enemy.");
     multiDagger.setMagicCost(20);
     multiDagger.setDamage(30);
     multiDagger.setHitChance(70);
