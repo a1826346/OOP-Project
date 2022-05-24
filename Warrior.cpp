@@ -17,7 +17,7 @@ void Warrior::generateMoves(){
     Move stab;
     stab.setMoveName("Stab");
     stab.setDescription("...");
-    stab.setActionText("...");
+    stab.setActionText("You thrust your sword toward the enemy.");
     stab.setMagicCost(0);
     stab.setDamage(10);
     stab.setHitChance(100);
@@ -30,7 +30,7 @@ void Warrior::generateMoves(){
     Move swipe;
     swipe.setMoveName("Swinning Swipe");
     swipe.setDescription("...");
-    swipe.setActionText("...");
+    swipe.setActionText("In a spinning motion, you swipe your sword across the enemy's body.");
     swipe.setMagicCost(0);
     swipe.setDamage(25);
     swipe.setHitChance(85);
@@ -43,7 +43,7 @@ void Warrior::generateMoves(){
     Move segmentation;
     segmentation.setMoveName("Segmentation");
     segmentation.setDescription("...");
-    segmentation.setActionText("...");
+    segmentation.setActionText("You attack the limbs of the enemy in an attempt to separate them from the body.");
     segmentation.setMagicCost(20);
     segmentation.setDamage(30);
     segmentation.setHitChance(90);
@@ -56,7 +56,7 @@ void Warrior::generateMoves(){
     Move uppercut;
     uppercut.setMoveName("Uppercut Swipe");
     uppercut.setDescription("...");
-    uppercut.setActionText("...");
+    uppercut.setActionText("You swipe your sword upward in the direction of the enemy's head.");
     uppercut.setMagicCost(10);
     uppercut.setDamage(35);
     uppercut.setHitChance(80);
