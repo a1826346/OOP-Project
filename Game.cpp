@@ -136,9 +136,10 @@ void Game::run(){
     startFight(*user, skeleton_2);
     }
     // running the end of the story both pre and post boss, with the boss fight in between.
-    endGame();
     startFight(*user, Drace);
     final();
+    stats();
+    endGame();
 }
 
 // the story outputted in the terminal to show to user what is happening in the story between the first and second fight.
@@ -156,7 +157,7 @@ void Game::endGame(){
 
 // the final part of the story shown to the user after they beat the Lord Drace boss.
 void Game::final(){
-    cout << "with the death of Lord Drace, the village people were once again free people" << endl << "The castle was taken down and the materials were used to build a wall around the village to keep the villagers safe" << endl << "you were praised as the hero of the village, all the village people look up to you" << endl << endl << "so what journey comes next? " << endl;
+    cout << "with the death of Lord Drace, the village people were once again free people" << endl << "The castle was taken down and the materials were used to build a wall around the village to keep the villagers safe" << endl << "you were praised as the hero of the village, all the village people look up to you" << endl << endl << "so what journey comes next? " << endl << endl;
 }
 
 
@@ -224,6 +225,14 @@ void Game::startFight(Player &_user, Computer &_enemy){
             cout << "The " << _enemy.getName() << " was defeated." << std::endl;
             printLineDivider(0);
     }
+}
+
+void Game::stats(Player *_user){
+    sleep_for(seconds(3));
+    cout << "Damage Dealt: " << 810 << 
+    cout << "Damage Taken: " << _user.getMaxHealth() - getCurrentHealth() << endl;
+    cout << "Magic Used: " << _user.getMagicMax() - _user.getCurrentMagic << endl;
+    cout << "Character Chosen: " << _user.getClassType() << endl << endl;
 }
 
 // default contructor.

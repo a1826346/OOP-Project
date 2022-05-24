@@ -13,7 +13,7 @@ void Skeleton::generateMoves(){
     stab.setMagicCost(0);
     stab.setDamage(5);
     stab.setHitChance(100);
-    stab.setCritChance(0);
+    stab.setCritChance(10);
     stab.setHealAmount(0);
     stab.setSpeed(6);
     moveList[0] = stab;
