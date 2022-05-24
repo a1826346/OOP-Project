@@ -17,7 +17,7 @@ void Warlock::generateMoves(){
     Move energyBeam;
     energyBeam.setMoveName("Energy Beam");
     energyBeam.setDescription("...");
-    energyBeam.setActionText("...");
+    energyBeam.setActionText("You send a beam of concentrated energy from your staff toward the enemy.");
     energyBeam.setMagicCost(10);
     energyBeam.setDamage(10);
     energyBeam.setHitChance(100);
@@ -28,9 +28,9 @@ void Warlock::generateMoves(){
 
     // Fireball is a medium damage, mostly accurate, magic attack.
     Move fireball;
-    fireball.setMoveName("fireball");
+    fireball.setMoveName("Fireball");
     fireball.setDescription("...");
-    fireball.setActionText("...");
+    fireball.setActionText("A large firey ball is ejected from your outstretched hands toward the enemy.");
     fireball.setMagicCost(20);
     fireball.setDamage(20);
     fireball.setHitChance(90);
@@ -43,7 +43,7 @@ void Warlock::generateMoves(){
     Move acidRain;
     acidRain.setMoveName("Acid Rain");
     acidRain.setDescription("...");
-    acidRain.setActionText("...");
+    acidRain.setActionText("As you raise your staff, bubbling acid begins to rain down over your enemy.");
     acidRain.setMagicCost(50);
     acidRain.setDamage(40);
     acidRain.setHitChance(75);
@@ -56,7 +56,7 @@ void Warlock::generateMoves(){
     Move Disintigrate;
     Disintigrate.setMoveName("Disintigrate");
     Disintigrate.setDescription("...");
-    Disintigrate.setActionText("...");
+    Disintigrate.setActionText("With great effort you disintegrate a lump of mass from the enemy.");
     Disintigrate.setMagicCost(80);
     Disintigrate.setDamage(50);
     Disintigrate.setHitChance(90);
