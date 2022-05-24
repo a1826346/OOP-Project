@@ -138,7 +138,7 @@ void Game::run(){
     // running the end of the story both pre and post boss, with the boss fight in between.
     startFight(*user, Drace);
     final();
-    stats();
+    stats(user);
     endGame();
 }
 
@@ -185,7 +185,7 @@ void Game::printLineDivider(bool _type){
     else{
         std::cout << "========" << std::endl;
     }
-    
+
 }
 
 // The function that starts a fight between a player and a computer class.
@@ -229,10 +229,10 @@ void Game::startFight(Player &_user, Computer &_enemy){
 
 void Game::stats(Player *_user){
     sleep_for(seconds(3));
-    cout << "Damage Dealt: " << 810 << 
-    cout << "Damage Taken: " << _user.getMaxHealth() - getCurrentHealth() << endl;
-    cout << "Magic Used: " << _user.getMagicMax() - _user.getCurrentMagic << endl;
-    cout << "Character Chosen: " << _user.getClassType() << endl << endl;
+    cout << "Damage Dealt: " << 810 << endl;
+    cout << "Damage Taken: " << _user->getMaxHealth() - _user->getCurrentHealth() << endl;
+    cout << "Magic Used: " << _user->getMagicMax() - _user->getCurrentMagic() << endl;
+    cout << "Character Chosen: " << _user->getClassType() << endl << endl;
 }
 
 // default contructor.

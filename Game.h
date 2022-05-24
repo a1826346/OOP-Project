@@ -35,9 +35,9 @@ class Game{
         void midGame();
         void endGame();
         void final();
-        
+
         // function to show the stats to the player at the end of the game.
-        void stats();
+        void stats(Player *_user);
 };
 
 #endif //GAME_H
