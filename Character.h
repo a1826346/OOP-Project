@@ -18,7 +18,7 @@ protected:
     Move chosenMove;
 
     // a vector of the class Move that will house the moves for each character in the game.
-    Move *moveList = new Move[10];
+    Move *moveList = new Move;
 
 public:
     // basic constructor that is built off for the player and computer class.

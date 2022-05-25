@@ -28,7 +28,7 @@ int Game::startMenu(){
     cout << "The village of Boldan has fallen into dark times, with the tyranical Lord Drace oppressing the fair village people." << endl;
     sleep_for(seconds(2));
     cout <<  "You are the village's last hope, a hero from a nearby village sent to wipe out Drace from his castle high on the hills." << endl;
-    sleep_for(seconds(2)); 
+    sleep_for(seconds(2));
     cout << "Can you save the village people before its too late?" << endl;
     sleep_for(seconds(2));
     cout << endl;
@@ -99,22 +99,22 @@ int Game::startMenu(){
 
     // Outputting the story, and using cin to ask the user to pick their path when the story begins, this will change what enemies they face.
     cout << endl << "As you approach the castle, you spot a cave near the side of the castle walls." << endl;
-    sleep_for(seconds(3)); 
+    sleep_for(seconds(3));
     cout << "A quick search of this cave reveals a hidden entrance into the castles dungeons." << endl;
-    sleep_for(seconds(3)); 
+    sleep_for(seconds(3));
     cout << "You make your way through to the dungeon and are instantly met with a decison." << endl;
-    sleep_for(seconds(3)); 
+    sleep_for(seconds(3));
     cout << "Do you decide to move up or down from the dungeons? " << endl;
-    sleep_for(seconds(1)); 
+    sleep_for(seconds(1));
     cout << "1 for up, 2 for down: ";
     int UorD;
     cin >> UorD;
     // Changing the story based off the input from the user.
     if(UorD == 1){
         cout << endl << endl << "You travel upstairs to the main halls of the castle, as you travel the halls you are met by a knight in black armour..." << endl;
-        sleep_for(seconds(2)); 
+        sleep_for(seconds(2));
         cout << "an undead knight! A story of legend brought to life?" << endl;
-        sleep_for(seconds(2)); 
+        sleep_for(seconds(2));
         cout << "Nevermind that right now, you've got a battle to win!" << endl;
         sleep_for(seconds(2));
         cout << "\nPress Enter to Continue";
@@ -123,11 +123,11 @@ int Game::startMenu(){
     }
     else if(UorD == 2){
         cout << endl << endl << "You travel further into the depths of the castles dungeons. As you travel further and further lower, you reach a large open cavern." << endl;
-        sleep_for(seconds(2)); 
+        sleep_for(seconds(2));
         cout << "In the darkness you spot a dark figure walking towards you." << endl;
-        sleep_for(seconds(2)); 
+        sleep_for(seconds(2));
         cout << "As it walks into the light you spot its hollow body, its a skeleton!" << endl;
-        sleep_for(seconds(2)); 
+        sleep_for(seconds(2));
         cout << "How is this even possible?" << endl;
         sleep_for(seconds(2));
         cout << "Your thoughts are quickly interupted, this is no time to ponder, its time to fight!" << endl;
@@ -178,7 +178,7 @@ void Game::run(){
     startFight(*user, Drace);
     final();
     stats(user);
-    endGame();
+    end();
 }
 
 // the story outputted in the terminal to show to user what is happening in the story between the first and second fight.
@@ -187,7 +187,7 @@ void Game::midGame(){
     getchar(); getchar();
     cout << "\033[A\33[2K";
     cout << "As the creature fell to the ground, an eerie sound bellowed from deep in the castle." << endl;
-    sleep_for(seconds(2)); 
+    sleep_for(seconds(2));
     cout << "Not wanting to get caught by another creature you run away, searching for any traces of Lord Drace as you do." << endl;
     sleep_for(seconds(2));
     cout << "You see a bright red light in the distance, as you go to investigate the source to the light, you are ambushed!" << endl;
@@ -287,9 +287,16 @@ void Game::startFight(Player &_user, Computer &_enemy){
         cout << "Player Health: " << _user.getCurrentHealth() << " | " << _enemy.getName() << " Health: " << _enemy.getCurrentHealth() << endl;
         cout << "Player Magic: " << _user.getCurrentMagic() << endl;
         sleep_for(seconds(1));
+
+
     }
     // ending the game if the users character dies.
     if (_user.isDead()){
+        cout << "Without the energy to move on, you drop to the floor." << endl;
+        sleep_for(seconds(1));
+        cout << "You tried your best but ulitmately you werent strong enough to best Lord Drace." << endl;
+        sleep_for(seconds(1));
+        cout << "if only you could have another chance." << endl;
         end();
     }
     // showing the user the enemy was defeated if they beat the enemy.
@@ -301,7 +308,7 @@ void Game::startFight(Player &_user, Computer &_enemy){
 }
 
 void Game::stats(Player *_user){
-    sleep_for(seconds(3));
+    sleep_for(seconds(2));
     cout << "Damage Dealt: " << 810 << endl;
     cout << "Damage Taken: " << _user->getMaxHealth() - _user->getCurrentHealth() << endl;
     cout << "Magic Used: " << _user->getMagicMax() - _user->getCurrentMagic() << endl;
